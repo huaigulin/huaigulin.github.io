@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
 import { Grid, useMediaQuery } from "@material-ui/core";
 import SideNavigation from "../../components/sideNav/sideNav";
+import Introduction from "../../components/introduction/introduction";
+import CallCenterDemo from "../../components/callCenter/callCenter";
+import ShopNow from "../../components/shopNow/shopNow";
+import CsTrainer from "../../components/csTrainer/csTrainer";
+import CrawlerManager from "../../components/crawlerManager/crawlerManager";
+import SpellingBee from "../../components/spellingBee/spellingBee";
+import Contact from "../../components/contact/contact";
 
 const useStyles = makeStyles({
     mainBackground: {
         backgroundColor: "#282c34",
         height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: "calc(10px + 2vmin)",
-        color: "white",
+        overflowY: "auto",
     },
 });
 
@@ -20,23 +22,44 @@ export default () => {
     const classes = useStyles();
     const theme = useTheme();
     const isBigScreen = useMediaQuery(theme.breakpoints.up("md"));
-    const [selectedTab, setSelectedTab] = useState(1);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const handleScroll = () => {
+        const position =
+            document.getElementById("mainComponent").scrollTop /
+            document.getElementById("mainComponent").scrollHeight;
+        setScrollPosition(position);
+    };
+
+    useEffect(() => {
+        document
+            .getElementById("mainComponent")
+            .addEventListener("scroll", handleScroll, { passive: true });
+
+        return () => {
+            document
+                .getElementById("mainComponent")
+                .removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    // console.log(scrollPosition);
 
     return (
         <Grid container>
             {isBigScreen && (
                 <Grid item md={3}>
-                    <SideNavigation
-                        selectedTab={selectedTab}
-                        setSelectedTab={setSelectedTab}
-                    />
+                    <SideNavigation scrollPosition={scrollPosition} />
                 </Grid>
             )}
             <Grid item xs={12} md={9}>
-                <div className={classes.mainBackground}>
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
+                <div id="mainComponent" className={classes.mainBackground}>
+                    <Introduction />
+                    <CallCenterDemo />
+                    <ShopNow />
+                    <CsTrainer />
+                    <CrawlerManager />
+                    <SpellingBee />
+                    <Contact />
                 </div>
             </Grid>
         </Grid>
