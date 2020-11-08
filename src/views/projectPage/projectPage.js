@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
 import { Grid, useMediaQuery } from "@material-ui/core";
+import SideNavigation from "../../components/sideNav/sideNav";
 
 const useStyles = makeStyles({
-    background: {
+    mainBackground: {
         backgroundColor: "#282c34",
-        minHeight: "100vh",
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -19,12 +20,20 @@ export default () => {
     const classes = useStyles();
     const theme = useTheme();
     const isBigScreen = useMediaQuery(theme.breakpoints.up("md"));
+    const [selectedTab, setSelectedTab] = useState(1);
 
     return (
-        <Grid container xs={12}>
-            {isBigScreen && <Grid item md={3}></Grid>}
+        <Grid container>
+            {isBigScreen && (
+                <Grid item md={3}>
+                    <SideNavigation
+                        selectedTab={selectedTab}
+                        setSelectedTab={setSelectedTab}
+                    />
+                </Grid>
+            )}
             <Grid item xs={12} md={9}>
-                <div className={classes.background}>
+                <div className={classes.mainBackground}>
                     <p>
                         Edit <code>src/App.js</code> and save to reload.
                     </p>

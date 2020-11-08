@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import ProjectPage from "./views/projectPage/projectPage";
 import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
+import blue from "@material-ui/core/colors/blue";
 
 const theme = createMuiTheme({
     breakpoints: {
@@ -16,6 +17,15 @@ const theme = createMuiTheme({
             lg: 1280,
             xl: 1920,
         },
+    },
+    palette: {
+        primary: {
+            light: blue[200],
+            main: blue[500],
+            dark: "#002884",
+            contrastText: "#fff",
+        },
+        white: "#fff",
     },
 });
 
