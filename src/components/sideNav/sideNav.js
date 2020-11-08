@@ -37,22 +37,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const treeItemData = [
-    { nodeId: 1, label: "Introduction" },
+    { nodeId: "1", label: "Introduction" },
     {
-        nodeId: 2,
+        nodeId: "2",
         label: "Project Showcase",
         nestedData: [
             {
-                nodeId: 3,
+                nodeId: "3",
                 label: "Intelligent Call Center for Banks, Proof of Concept",
             },
-            { nodeId: 4, label: "ShopNow Ecommerce Platform" },
-            { nodeId: 5, label: "Customer Service AI Trainer" },
-            { nodeId: 6, label: "Crawler Manager" },
-            { nodeId: 7, label: "Spelling Bee" },
+            { nodeId: "4", label: "ShopNow Ecommerce Platform" },
+            { nodeId: "5", label: "Customer Service AI Trainer" },
+            { nodeId: "6", label: "Crawler Manager" },
+            { nodeId: "7", label: "Spelling Bee" },
         ],
     },
-    { nodeId: 8, label: "Get in Touch" },
+    { nodeId: "8", label: "Get in Touch" },
 ];
 
 export default (props) => {
@@ -75,6 +75,7 @@ export default (props) => {
             >
                 {treeItemData.map((row) => (
                     <TreeItem
+                        key={row.nodeId}
                         nodeId={row.nodeId}
                         label={row.label}
                         classes={{
@@ -92,6 +93,7 @@ export default (props) => {
                         {row.nestedData &&
                             row.nestedData.map((r) => (
                                 <TreeItem
+                                    key={r.nodeId}
                                     classes={{
                                         root: classes.treeItemNestedRoot,
                                         content: classes.treeItemContent,
