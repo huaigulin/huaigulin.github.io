@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
 import { Typography } from "@material-ui/core";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     background: {
         height: "100vh",
         display: "flex",
@@ -10,9 +10,9 @@ const useStyles = makeStyles({
         alignItems: "center",
         justifyContent: "center",
         fontSize: "calc(10px + 2vmin)",
-        color: "white",
+        color: theme.palette.common.white,
     },
-});
+}));
 
 export default () => {
     const classes = useStyles();

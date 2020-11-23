@@ -17,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
     },
     treeItemBoldLabel: {
         fontWeight: "bold",
-        color: theme.palette.white,
+        color: theme.palette.common.white,
     },
     treeItemContent: {
         "&:hover": {
-            color: theme.palette.white,
+            color: theme.palette.common.white,
         },
         height: "3.5em",
     },

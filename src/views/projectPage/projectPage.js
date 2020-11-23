@@ -15,6 +15,7 @@ const useStyles = makeStyles({
         backgroundColor: "#282c34",
         height: "100vh",
         overflowY: "auto",
+        width: "100%",
     },
 });
 

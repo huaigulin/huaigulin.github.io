@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import ProjectPage from "./views/projectPage/projectPage";
 import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
-import blue from "@material-ui/core/colors/blue";
 
 const theme = createMuiTheme({
     breakpoints: {
@@ -19,13 +18,35 @@ const theme = createMuiTheme({
         },
     },
     palette: {
+        background: {
+            default: "#121212",
+            level1: "#212121",
+            level2: "#333",
+            paper: "#424242",
+        },
+        common: {
+            black: "#000",
+            white: "#fff",
+        },
         primary: {
-            light: blue[200],
-            main: blue[500],
-            dark: "#002884",
+            light: "#80d6ff",
+            main: "#42a5f5",
+            dark: "#0077c2",
             contrastText: "#fff",
         },
-        white: "#fff",
+        secondary: {
+            light: "#ff77a9",
+            main: "#ec407a",
+            dark: "#b4004e",
+            contrastText: "#fff",
+        },
+        text: {
+            disabled: "rgba(255, 255, 255, 0.5)",
+            hint: "rgba(255, 255, 255, 0.5)",
+            icon: "rgba(255, 255, 255, 0.5)",
+            primary: "#fff",
+            secondary: "rgba(255, 255, 255, 0.7)",
+        },
     },
 });
 
