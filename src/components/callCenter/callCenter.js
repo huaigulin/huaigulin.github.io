@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
         height: "100vh",
         width: "100%",
     },
+    backgroundSm: {
+        width: "100%",
+    },
 }));
 
 export default () => {
@@ -24,7 +27,7 @@ export default () => {
             justify="center"
             alignItems="center"
             spacing={2}
-            className={classes.background}
+            className={isSmScreen ? classes.backgroundSm : classes.background}
         >
             <Grid item>
                 <Typography variant="h4" color="textPrimary">

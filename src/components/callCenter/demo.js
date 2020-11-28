@@ -13,14 +13,14 @@ export default (props) => {
     return (
         <Fragment>
             <Grid item style={{ width: "100%" }}>
-                <Grid container justify="center" spacing={4}>
-                    <Grid item>
+                <Grid container justify="center" spacing={2}>
+                    <Grid item xs={12} md={4}>
                         <SpeechRecognition />
                     </Grid>
-                    <Grid item>
+                    <Grid item xs={12} md={4}>
                         <TextToSpeech />
                     </Grid>
-                    <Grid item>
+                    <Grid item xs={12} md={4}>
                         <IntentRecognition />
                     </Grid>
                 </Grid>
