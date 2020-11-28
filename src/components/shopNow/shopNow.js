@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
-import { Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles({
     background: {
         height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: "calc(10px + 2vmin)",
-        color: "white",
+        width: "100%",
     },
 });
 
@@ -18,9 +13,19 @@ export default () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.background}>
-            <h1>ShopNow</h1>
-            <p>ShopNow Demo</p>
-        </div>
+        <Grid
+            container
+            direction="column"
+            justify="center"
+            alignItems="center"
+            spacing={2}
+            className={classes.background}
+        >
+            <Grid item>
+                <Typography variant="h4" color="textPrimary">
+                    ShopNow Ecommerce Platform
+                </Typography>
+            </Grid>
+        </Grid>
     );
 };
