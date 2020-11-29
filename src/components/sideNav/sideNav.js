@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const treeItemData = [
-    { nodeId: "1", label: "Introduction" },
+    { nodeId: "1", label: "Introduction", start: 0, end: 0.1 },
     {
         nodeId: "expandable",
         label: "Project Showcase",
@@ -53,14 +53,26 @@ const treeItemData = [
             {
                 nodeId: "2",
                 label: "Intelligent Call Center for Banks, Proof of Concept",
+                start: 0.1,
+                end: 0.2,
             },
-            { nodeId: "3", label: "ShopNow Ecommerce Platform" },
-            { nodeId: "4", label: "Customer Service AI Trainer" },
-            { nodeId: "5", label: "Crawler Manager" },
-            { nodeId: "6", label: "Spelling Bee" },
+            {
+                nodeId: "3",
+                label: "ShopNow Ecommerce Platform",
+                start: 0.2,
+                end: 0.6,
+            },
+            {
+                nodeId: "4",
+                label: "Customer Service AI Trainer",
+                start: 0.6,
+                end: 0.7,
+            },
+            { nodeId: "5", label: "Crawler Manager", start: 0.7, end: 0.8 },
+            { nodeId: "6", label: "Spelling Bee", start: 0.8, end: 0.9 },
         ],
     },
-    { nodeId: "7", label: "Get in Touch" },
+    { nodeId: "7", label: "Get in Touch", start: 0.9, end: 1 },
 ];
 
 export default (props) => {
@@ -69,7 +81,7 @@ export default (props) => {
     const [expanded, setExpanded] = useState([]);
 
     useEffect(() => {
-        if (scrollPosition > 0.5 / 7) setExpanded(["expandable"]);
+        if (scrollPosition > 0.5 / 10) setExpanded(["expandable"]);
     }, [scrollPosition]);
 
     return (
@@ -97,10 +109,8 @@ export default (props) => {
                             label: clsx({
                                 [classes.treeItemLabel]: true,
                                 [classes.treeItemBoldLabel]:
-                                    scrollPosition >
-                                        (parseInt(row.nodeId) - 1.5) / 7 &&
-                                    scrollPosition <=
-                                        (parseInt(row.nodeId) - 0.5) / 7,
+                                    scrollPosition > row.start - 0.05 &&
+                                    scrollPosition <= row.end - 0.05,
                             }),
                             selected: classes.treeItemSelected,
                         }}
@@ -110,7 +120,7 @@ export default (props) => {
                                     .getElementById("mainComponent")
                                     .scrollTo({
                                         top:
-                                            ((row.nodeId - 1) / 7) *
+                                            row.start *
                                             document.getElementById(
                                                 "mainComponent"
                                             ).scrollHeight,
@@ -139,11 +149,8 @@ export default (props) => {
                                             [classes.treeItemLabel]: true,
                                             [classes.treeItemBoldLabel]:
                                                 scrollPosition >
-                                                    (parseInt(r.nodeId) - 1.5) /
-                                                        7 &&
-                                                scrollPosition <=
-                                                    (parseInt(r.nodeId) - 0.5) /
-                                                        7,
+                                                    r.start - 0.05 &&
+                                                scrollPosition <= r.end - 0.05,
                                         }),
                                         selected: classes.treeItemSelected,
                                     }}
@@ -154,7 +161,7 @@ export default (props) => {
                                             .getElementById("mainComponent")
                                             .scrollTo({
                                                 top:
-                                                    ((r.nodeId - 1) / 7) *
+                                                    r.start *
                                                     document.getElementById(
                                                         "mainComponent"
                                                     ).scrollHeight,

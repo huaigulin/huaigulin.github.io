@@ -30,6 +30,7 @@ export default () => {
             document.getElementById("mainComponent").scrollHeight;
         setScrollPosition(position);
     };
+    console.log(scrollPosition);
 
     useEffect(() => {
         document
