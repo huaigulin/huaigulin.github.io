@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
         zIndex: theme.zIndex.drawer + 1,
         color: theme.palette.common.black,
     },
+    italic: {
+        fontStyle: "italic",
+    },
     tooltip: {
         fontSize: 16,
     },
@@ -74,7 +77,11 @@ export default (props) => {
                 </Typography>
             </Backdrop>
             <Grid item>
-                <Typography variant="h6" color="textPrimary">
+                <Typography
+                    variant="subtitle1"
+                    color="textPrimary"
+                    className={classes.italic}
+                >
                     Text to Speech:
                 </Typography>
             </Grid>

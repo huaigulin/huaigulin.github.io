@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
         height: 200,
         overflowX: "auto",
     },
+    italic: {
+        fontStyle: "italic",
+    },
     tooltip: {
         fontSize: 16,
     },
@@ -59,7 +62,11 @@ export default (props) => {
     return (
         <Grid container direction="column" alignItems="center" spacing={2}>
             <Grid item>
-                <Typography variant="h6" color="textPrimary">
+                <Typography
+                    variant="subtitle1"
+                    color="textPrimary"
+                    className={classes.italic}
+                >
                     Intent Recognition (Yes or No):
                 </Typography>
             </Grid>

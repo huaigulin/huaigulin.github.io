@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
         height: 272,
         overflowY: "auto",
     },
+    italic: {
+        fontStyle: "italic",
+    },
     tooltip: {
         fontSize: 16,
     },
@@ -69,7 +72,11 @@ export default (props) => {
                 </Typography>
             </Backdrop>
             <Grid item>
-                <Typography variant="h6" color="textPrimary">
+                <Typography
+                    variant="subtitle1"
+                    color="textPrimary"
+                    className={classes.italic}
+                >
                     Speech Recognition:
                 </Typography>
             </Grid>

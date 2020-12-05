@@ -7,6 +7,9 @@ const useStyles = makeStyles({
         height: "100vh",
         width: "100%",
     },
+    italic: {
+        fontStyle: "italic",
+    },
 });
 
 export default () => {
@@ -25,12 +28,17 @@ export default () => {
                 className={classes.background}
             >
                 <Grid item>
-                    <Typography variant="h4" color="textPrimary">
+                    <Typography variant="h5" color="textPrimary">
                         ShopNow Ecommerce Platform
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <Typography variant="h5" color="textPrimary" gutterBottom>
+                    <Typography
+                        variant="h6"
+                        color="textPrimary"
+                        gutterBottom
+                        className={classes.italic}
+                    >
                         Multi-layer Menu:{" "}
                     </Typography>
                     <video
@@ -52,7 +60,12 @@ export default () => {
                 className={classes.background}
             >
                 <Grid item>
-                    <Typography variant="h5" color="textPrimary" gutterBottom>
+                    <Typography
+                        variant="h6"
+                        color="textPrimary"
+                        gutterBottom
+                        className={classes.italic}
+                    >
                         SMS Template Generator:{" "}
                     </Typography>
                     <video
@@ -74,7 +87,12 @@ export default () => {
                 className={classes.background}
             >
                 <Grid item>
-                    <Typography variant="h5" color="textPrimary" gutterBottom>
+                    <Typography
+                        variant="h6"
+                        color="textPrimary"
+                        gutterBottom
+                        className={classes.italic}
+                    >
                         WeChat Public Account Message Generator:{" "}
                     </Typography>
                     <video
@@ -96,7 +114,12 @@ export default () => {
                 className={classes.background}
             >
                 <Grid item>
-                    <Typography variant="h5" color="textPrimary" gutterBottom>
+                    <Typography
+                        variant="h6"
+                        color="textPrimary"
+                        gutterBottom
+                        className={classes.italic}
+                    >
                         Marketing Data Visulization:{" "}
                     </Typography>
                     <video
@@ -104,7 +127,7 @@ export default () => {
                         type="video/mp4"
                         autoPlay
                         loop
-                        width={isSmScreen ? "100%" : 490}
+                        width={isSmScreen ? "100%" : 576}
                         muted
                     />
                 </Grid>

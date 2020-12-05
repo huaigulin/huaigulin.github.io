@@ -30,7 +30,7 @@ export default () => {
             className={isSmScreen ? classes.backgroundSm : classes.background}
         >
             <Grid item>
-                <Typography variant="h4" color="textPrimary">
+                <Typography variant="h5" color="textPrimary">
                     Intelligent Call Center for Banks, Proof of Concept
                 </Typography>
             </Grid>
