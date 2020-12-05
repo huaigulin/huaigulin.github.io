@@ -99,6 +99,14 @@ export default () => {
                     <Typography variant="h5" color="textPrimary" gutterBottom>
                         Marketing Data Visulization:{" "}
                     </Typography>
+                    <video
+                        src="https://personalwebsite2.blob.core.windows.net/container/data_visulization.mp4"
+                        type="video/mp4"
+                        autoPlay
+                        loop
+                        width={isSmScreen ? "100%" : 490}
+                        muted
+                    />
                 </Grid>
             </Grid>
         </Fragment>
