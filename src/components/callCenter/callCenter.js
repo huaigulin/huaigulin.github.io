@@ -39,6 +39,7 @@ export default () => {
                 <Typography
                     variant="h5"
                     color="textPrimary"
+                    align="center"
                     style={isSmScreen ? { marginLeft: 8, marginRight: 8 } : {}}
                 >
                     Intelligent Call Center for Banks, Proof of Concept
