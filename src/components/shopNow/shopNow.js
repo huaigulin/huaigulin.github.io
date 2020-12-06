@@ -101,28 +101,66 @@ export default () => {
                 className={classes.background}
             >
                 <Grid item>
-                    <Typography
-                        variant="h6"
-                        color="textPrimary"
-                        gutterBottom
-                        className={classes.italic}
-                        style={
-                            isSmScreen ? { marginLeft: 8, marginRight: 8 } : {}
-                        }
-                    >
-                        SMS Template Generator:{" "}
-                    </Typography>
-                    <video
-                        src="https://personalwebsite2.blob.core.windows.net/container/Template.mp4"
-                        type="video/mp4"
-                        autoPlay
-                        loop
-                        width={isSmScreen ? "100%" : 490}
-                        muted
-                        style={
-                            isSmScreen ? { marginLeft: 8, marginRight: 8 } : {}
-                        }
-                    />
+                    <Grid container spacing={4} alignItems="center">
+                        <Grid item xs={12} md={6}>
+                            <Typography
+                                variant="h6"
+                                color="textPrimary"
+                                gutterBottom
+                                className={classes.italic}
+                                style={
+                                    isSmScreen
+                                        ? { marginLeft: 8, marginRight: 8 }
+                                        : { marginLeft: 16 }
+                                }
+                            >
+                                SMS Template Generator:{" "}
+                            </Typography>
+                            <video
+                                src="https://personalwebsite2.blob.core.windows.net/container/Template.mp4"
+                                type="video/mp4"
+                                autoPlay
+                                loop
+                                width="100%"
+                                muted
+                                style={
+                                    isSmScreen
+                                        ? { marginLeft: 8, marginRight: 8 }
+                                        : { marginLeft: 16 }
+                                }
+                            />
+                        </Grid>
+                        <Grid item xs={12} md={6}>
+                            <Typography
+                                color="textPrimary"
+                                align="center"
+                                style={
+                                    isSmScreen
+                                        ? { marginLeft: 8, marginRight: 8 }
+                                        : { marginRight: 16 }
+                                }
+                            >
+                                This form contains multiple tools that help
+                                users easily generate SMS marketing contents
+                                that follow regulators' rules
+                            </Typography>
+                            <br />
+                            <Typography
+                                color="textPrimary"
+                                align="center"
+                                style={
+                                    isSmScreen
+                                        ? { marginLeft: 8, marginRight: 8 }
+                                        : { marginRight: 16 }
+                                }
+                            >
+                                SUBMIT button submits the template application
+                                to multiple SMS service providers and redirects
+                                to an application status page, where user can
+                                monitor the status of the application
+                            </Typography>
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
             <Grid
@@ -134,28 +172,77 @@ export default () => {
                 className={classes.background}
             >
                 <Grid item>
-                    <Typography
-                        variant="h6"
-                        color="textPrimary"
-                        gutterBottom
-                        className={classes.italic}
-                        style={
-                            isSmScreen ? { marginLeft: 8, marginRight: 8 } : {}
-                        }
-                    >
-                        WeChat Public Account Message Generator:{" "}
-                    </Typography>
-                    <video
-                        src="https://personalwebsite2.blob.core.windows.net/container/welcome_message.mp4"
-                        type="video/mp4"
-                        autoPlay
-                        loop
-                        width={isSmScreen ? "100%" : 490}
-                        muted
-                        style={
-                            isSmScreen ? { marginLeft: 8, marginRight: 8 } : {}
-                        }
-                    />
+                    <Grid container spacing={4} alignItems="center">
+                        <Grid item xs={12} md={6}>
+                            <Typography
+                                variant="h6"
+                                color="textPrimary"
+                                gutterBottom
+                                className={classes.italic}
+                                style={
+                                    isSmScreen
+                                        ? { marginLeft: 8, marginRight: 8 }
+                                        : { marginLeft: 16 }
+                                }
+                            >
+                                WeChat Public Account Message Generator:{" "}
+                            </Typography>
+                            <video
+                                src="https://personalwebsite2.blob.core.windows.net/container/welcome_message.mp4"
+                                type="video/mp4"
+                                autoPlay
+                                loop
+                                width="100%"
+                                muted
+                                style={
+                                    isSmScreen
+                                        ? { marginLeft: 8, marginRight: 8 }
+                                        : { marginLeft: 16 }
+                                }
+                            />
+                        </Grid>
+                        <Grid item xs={12} md={6}>
+                            <Typography
+                                color="textPrimary"
+                                align="center"
+                                style={
+                                    isSmScreen
+                                        ? { marginLeft: 8, marginRight: 8 }
+                                        : { marginRight: 16 }
+                                }
+                            >
+                                WeChat Public Account is an import eCommerce
+                                marketing channel in the Chinese market
+                            </Typography>
+                            <br />
+                            <Typography
+                                color="textPrimary"
+                                align="center"
+                                style={
+                                    isSmScreen
+                                        ? { marginLeft: 8, marginRight: 8 }
+                                        : { marginRight: 16 }
+                                }
+                            >
+                                This form helps users generate WeChat Public
+                                Account messages with materials they uploaded
+                            </Typography>
+                            <br />
+                            <Typography
+                                color="textPrimary"
+                                align="center"
+                                style={
+                                    isSmScreen
+                                        ? { marginLeft: 8, marginRight: 8 }
+                                        : { marginRight: 16 }
+                                }
+                            >
+                                Users can choose many content types, as well as
+                                visualize the message simultaneously when they
+                                are filling out the form
+                            </Typography>
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
             <Grid
@@ -167,28 +254,51 @@ export default () => {
                 className={classes.background}
             >
                 <Grid item>
-                    <Typography
-                        variant="h6"
-                        color="textPrimary"
-                        gutterBottom
-                        className={classes.italic}
-                        style={
-                            isSmScreen ? { marginLeft: 8, marginRight: 8 } : {}
-                        }
-                    >
-                        Marketing Data Visulization:{" "}
-                    </Typography>
-                    <video
-                        src="https://personalwebsite2.blob.core.windows.net/container/data_visulization.mp4"
-                        type="video/mp4"
-                        autoPlay
-                        loop
-                        width={isSmScreen ? "100%" : 576}
-                        muted
-                        style={
-                            isSmScreen ? { marginLeft: 8, marginRight: 8 } : {}
-                        }
-                    />
+                    <Grid container spacing={4} alignItems="center">
+                        <Grid item xs={12} md={7}>
+                            <Typography
+                                variant="h6"
+                                color="textPrimary"
+                                gutterBottom
+                                className={classes.italic}
+                                style={
+                                    isSmScreen
+                                        ? { marginLeft: 8, marginRight: 8 }
+                                        : { marginLeft: 16 }
+                                }
+                            >
+                                Sales and Marketing Data Visulization:{" "}
+                            </Typography>
+                            <video
+                                src="https://personalwebsite2.blob.core.windows.net/container/data_visulization.mp4"
+                                type="video/mp4"
+                                autoPlay
+                                loop
+                                width="100%"
+                                muted
+                                style={
+                                    isSmScreen
+                                        ? { marginLeft: 8, marginRight: 8 }
+                                        : { marginLeft: 16 }
+                                }
+                            />
+                        </Grid>
+                        <Grid item xs={12} md={5}>
+                            <Typography
+                                color="textPrimary"
+                                align="center"
+                                style={
+                                    isSmScreen
+                                        ? { marginLeft: 8, marginRight: 8 }
+                                        : { marginRight: 16 }
+                                }
+                            >
+                                Charts, tables and cards that help users track
+                                sales data and monitor effectiveness of
+                                marketing campaigns
+                            </Typography>
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
         </Fragment>
