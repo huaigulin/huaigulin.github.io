@@ -66,6 +66,7 @@ export default () => {
                             <Grid item xs={12} md={6}>
                                 <Typography
                                     color="textPrimary"
+                                    align="center"
                                     style={
                                         isSmScreen
                                             ? { marginLeft: 8, marginRight: 8 }
@@ -80,11 +81,11 @@ export default () => {
                                     intelligent call center
                                 </Typography>
                                 <br />
-                                <Typography color="textPrimary">
+                                <Typography color="textPrimary" align="center">
                                     Type of Work: professional, independent
                                 </Typography>
                                 <br />
-                                <Typography color="textPrimary">
+                                <Typography color="textPrimary" align="center">
                                     Icons:{" "}
                                     <Link
                                         target="_blank"
@@ -96,7 +97,7 @@ export default () => {
                                     </Link>
                                 </Typography>
                                 <br />
-                                <Typography color="textPrimary">
+                                <Typography color="textPrimary" align="center">
                                     Speech Services:{" "}
                                     <Link
                                         target="_blank"
