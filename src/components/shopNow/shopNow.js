@@ -50,7 +50,7 @@ export default () => {
                             </Typography>
                             <br />
                             <Typography color="textPrimary" align="center">
-                                Type of Work: professional, team
+                                Type of Work: <i>professional</i>, <i>team</i>
                             </Typography>
                             <br />
                             <Typography color="textPrimary" align="center">
@@ -140,9 +140,9 @@ export default () => {
                                         : { marginRight: 16 }
                                 }
                             >
-                                This form contains multiple tools that help
-                                users easily generate SMS marketing contents
-                                that follow regulators' rules
+                                This form contains many tools that help users
+                                easily generate SMS marketing contents that
+                                follow regulators' rules
                             </Typography>
                             <br />
                             <Typography

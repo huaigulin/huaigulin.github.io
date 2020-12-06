@@ -3,6 +3,7 @@ import { makeStyles, useTheme } from "@material-ui/styles";
 import {
     Button,
     Grid,
+    Icon,
     Link,
     Typography,
     useMediaQuery,
@@ -83,7 +84,8 @@ export default () => {
                                 </Typography>
                                 <br />
                                 <Typography color="textPrimary" align="center">
-                                    Type of Work: professional, independent
+                                    Type of Work: <i>professional</i>,{" "}
+                                    <i>independent</i>
                                 </Typography>
                                 <br />
                                 <Typography color="textPrimary" align="center">
@@ -95,6 +97,10 @@ export default () => {
                                         color="textSecondary"
                                     >
                                         Streamline Icons
+                                        <OpenInNewIcon
+                                            color="inherit"
+                                            fontSize="inherit"
+                                        />
                                     </Link>
                                 </Typography>
                                 <br />
@@ -107,6 +113,10 @@ export default () => {
                                         color="textSecondary"
                                     >
                                         Microsoft Azure
+                                        <OpenInNewIcon
+                                            color="inherit"
+                                            fontSize="inherit"
+                                        />
                                     </Link>
                                 </Typography>
                             </Grid>
