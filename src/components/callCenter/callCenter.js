@@ -75,12 +75,14 @@ export default () => {
                                             : { marginRight: 16 }
                                     }
                                 >
-                                    Using <i>speech recognition</i>,{" "}
-                                    <i>text to speech</i>,{" "}
-                                    <i>intent recognition</i> and{" "}
-                                    <i>frontend animation</i> to showcase the
-                                    company's technical expertise in building an
-                                    intelligent call center
+                                    <b>
+                                        Using <i>speech recognition</i>,{" "}
+                                        <i>text to speech</i>,{" "}
+                                        <i>intent recognition</i> and{" "}
+                                        <i>frontend animation</i> to showcase
+                                        the company's technical expertise in
+                                        building an intelligent call center
+                                    </b>
                                 </Typography>
                                 <br />
                                 <Typography color="textPrimary" align="center">

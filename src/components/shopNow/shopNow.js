@@ -44,9 +44,11 @@ export default () => {
                                         : { marginLeft: 16 }
                                 }
                             >
-                                A one-stop platform solution that helps
-                                international businesses launch and manage
-                                eCommerce activities in the Chinese market
+                                <b>
+                                    A one-stop platform solution that helps
+                                    international businesses launch and manage
+                                    eCommerce activities in the Chinese market
+                                </b>
                             </Typography>
                             <br />
                             <Typography color="textPrimary" align="center">
