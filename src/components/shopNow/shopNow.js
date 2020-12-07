@@ -82,6 +82,7 @@ export default () => {
                                 loop
                                 width="100%"
                                 muted
+                                playsInline
                                 style={
                                     isSmScreen
                                         ? { marginLeft: 8, marginRight: 8 }
@@ -123,6 +124,7 @@ export default () => {
                                 loop
                                 width="100%"
                                 muted
+                                playsInline
                                 style={
                                     isSmScreen
                                         ? { marginLeft: 8, marginRight: 8 }
@@ -194,6 +196,7 @@ export default () => {
                                 loop
                                 width="100%"
                                 muted
+                                playsInline
                                 style={
                                     isSmScreen
                                         ? { marginLeft: 8, marginRight: 8 }
@@ -276,6 +279,7 @@ export default () => {
                                 loop
                                 width="100%"
                                 muted
+                                playsInline
                                 style={
                                     isSmScreen
                                         ? { marginLeft: 8, marginRight: 8 }
