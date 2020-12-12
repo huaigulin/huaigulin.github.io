@@ -51,9 +51,11 @@ export default () => {
                                         : { marginLeft: 16 }
                                 }
                             >
-                                A one-stop platform solution that helps
-                                international businesses launch and manage
-                                eCommerce activities in the Chinese market
+                                <b>
+                                    A one-stop platform solution that helps
+                                    international businesses launch and manage
+                                    eCommerce activities in the Chinese market
+                                </b>
                             </Typography>
                             <br />
                             <Typography color="textPrimary" align="center">
@@ -89,6 +91,7 @@ export default () => {
                                 loop
                                 width="100%"
                                 muted
+                                playsInline
                                 style={
                                     isSmScreen
                                         ? { marginLeft: 8, marginRight: 8 }
@@ -132,6 +135,7 @@ export default () => {
                                 loop
                                 width="100%"
                                 muted
+                                playsInline
                                 style={
                                     isSmScreen
                                         ? { marginLeft: 8, marginRight: 8 }
@@ -205,6 +209,7 @@ export default () => {
                                 loop
                                 width="100%"
                                 muted
+                                playsInline
                                 style={
                                     isSmScreen
                                         ? { marginLeft: 8, marginRight: 8 }
@@ -289,6 +294,7 @@ export default () => {
                                 loop
                                 width="100%"
                                 muted
+                                playsInline
                                 style={
                                     isSmScreen
                                         ? { marginLeft: 8, marginRight: 8 }
