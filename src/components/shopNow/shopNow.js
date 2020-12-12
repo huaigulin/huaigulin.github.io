@@ -2,15 +2,20 @@ import React, { Fragment, useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
 import { Grid, Typography, useMediaQuery } from "@material-ui/core";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     background: {
         height: "100vh",
+        width: "100%",
+    },
+    backgroundSm: {
+        paddingTop: theme.spacing(8),
+        paddingBottom: theme.spacing(8),
         width: "100%",
     },
     italic: {
         fontStyle: "italic",
     },
-});
+}));
 
 export default () => {
     const classes = useStyles();
@@ -25,7 +30,9 @@ export default () => {
                 justify="center"
                 alignItems="center"
                 spacing={2}
-                className={classes.background}
+                className={
+                    isSmScreen ? classes.backgroundSm : classes.background
+                }
             >
                 <Grid item>
                     <Typography variant="h5" color="textPrimary" align="center">
@@ -98,7 +105,9 @@ export default () => {
                 justify="center"
                 alignItems="center"
                 spacing={2}
-                className={classes.background}
+                className={
+                    isSmScreen ? classes.backgroundSm : classes.background
+                }
             >
                 <Grid item>
                     <Grid container spacing={4} alignItems="center">
@@ -169,7 +178,9 @@ export default () => {
                 justify="center"
                 alignItems="center"
                 spacing={2}
-                className={classes.background}
+                className={
+                    isSmScreen ? classes.backgroundSm : classes.background
+                }
             >
                 <Grid item>
                     <Grid container spacing={4} alignItems="center">
@@ -251,7 +262,9 @@ export default () => {
                 justify="center"
                 alignItems="center"
                 spacing={2}
-                className={classes.background}
+                className={
+                    isSmScreen ? classes.backgroundSm : classes.background
+                }
             >
                 <Grid item>
                     <Grid container spacing={4} alignItems="center">

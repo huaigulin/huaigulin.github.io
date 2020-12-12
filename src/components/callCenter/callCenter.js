@@ -17,6 +17,8 @@ const useStyles = makeStyles((theme) => ({
         width: "100%",
     },
     backgroundSm: {
+        paddingTop: theme.spacing(8),
+        paddingBottom: theme.spacing(8),
         width: "100%",
     },
 }));
