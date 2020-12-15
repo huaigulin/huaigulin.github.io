@@ -20,7 +20,7 @@ export default () => {
     return (
         <div className={classes.background}>
             <h1>Get in Touch</h1>
-            <p>Contact info</p>
+            <p>Contact info (Waiting to update)</p>
         </div>
     );
 };

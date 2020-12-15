@@ -20,7 +20,7 @@ export default () => {
     return (
         <div className={classes.background}>
             <h1>Spelling Bee</h1>
-            <p>Demo</p>
+            <p>Demo (waiting to update)</p>
         </div>
     );
 };
