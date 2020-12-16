@@ -58,7 +58,7 @@ const treeItemData = [
             },
             {
                 nodeId: "3",
-                label: "ShopNow Ecommerce Platform",
+                label: "ShopNow E-commerce Platform",
                 start: 0.2,
                 end: 0.6,
             },

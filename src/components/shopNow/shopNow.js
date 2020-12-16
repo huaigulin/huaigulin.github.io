@@ -36,7 +36,7 @@ export default () => {
             >
                 <Grid item>
                     <Typography variant="h5" color="textPrimary" align="center">
-                        <b>ShopNow Ecommerce Platform</b>
+                        <b>ShopNow E-commerce Platform</b>
                     </Typography>
                 </Grid>
                 <Grid item>
@@ -54,7 +54,7 @@ export default () => {
                                 <b>
                                     A one-stop platform solution that helps
                                     international businesses launch and manage
-                                    eCommerce activities in the Chinese market
+                                    e-commerce activities in the Chinese market
                                 </b>
                             </Typography>
                             <br />
