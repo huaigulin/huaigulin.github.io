@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
 import { Typography } from "@material-ui/core";
+import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 
 const useStyles = makeStyles((theme) => ({
     background: {
@@ -33,6 +34,10 @@ export default () => {
             <p>
                 More importantly, I'm a strong problem-solver who cares about
                 user experience and design.
+            </p>
+            <p style={{ display: "flex", alignItems: "center" }}>
+                | <ArrowDownwardIcon fontSize="inherit" /> Scroll down to see
+                sample projects |
             </p>
         </div>
     );
