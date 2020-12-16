@@ -45,7 +45,7 @@ export default () => {
                     align="center"
                     style={isSmScreen ? { marginLeft: 8, marginRight: 8 } : {}}
                 >
-                    Intelligent Call Center for Banks, Proof of Concept
+                    <b>Intelligent Call Center for Banks, Proof of Concept</b>
                 </Typography>
             </Grid>
             {displayVideo ? (

@@ -31,7 +31,7 @@ export default () => {
         >
             <Grid item>
                 <Typography variant="h5" color="textPrimary" align="center">
-                    Customer Service AI Trainer
+                    <b>Customer Service AI Trainer</b>
                 </Typography>
             </Grid>
             <Grid item>

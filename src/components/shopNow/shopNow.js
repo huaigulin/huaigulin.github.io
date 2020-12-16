@@ -36,7 +36,7 @@ export default () => {
             >
                 <Grid item>
                     <Typography variant="h5" color="textPrimary" align="center">
-                        ShopNow Ecommerce Platform
+                        <b>ShopNow Ecommerce Platform</b>
                     </Typography>
                 </Grid>
                 <Grid item>

@@ -30,7 +30,7 @@ export default () => {
         >
             <Grid item>
                 <Typography variant="h5" color="textPrimary" align="center">
-                    Crawler Manager
+                    <b>Crawler Manager</b>
                 </Typography>
             </Grid>
             <Grid item>
