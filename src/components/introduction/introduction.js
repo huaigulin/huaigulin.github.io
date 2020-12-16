@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
-import { Typography } from "@material-ui/core";
+import { Typography, useMediaQuery } from "@material-ui/core";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+import clsx from "clsx";
 
 const useStyles = makeStyles((theme) => ({
     background: {
@@ -12,17 +13,31 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         fontSize: "calc(10px + 2vmin)",
         color: theme.palette.common.white,
+        textAlign: "center",
+    },
+    spacingSm: {
+        paddingLeft: theme.spacing(4),
+        paddingRight: theme.spacing(4),
+    },
+    spacingLg: {
         paddingLeft: theme.spacing(12),
         paddingRight: theme.spacing(12),
-        textAlign: "center",
     },
 }));
 
 export default () => {
     const classes = useStyles();
+    const theme = useTheme();
+    const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
-        <div className={classes.background}>
+        <div
+            className={clsx({
+                [classes.background]: true,
+                [classes.spacingSm]: isSmScreen,
+                [classes.spacingLg]: !isSmScreen,
+            })}
+        >
             <h1>Huaigu Lin</h1>
             <h3>
                 <i>Not your ordinary full-stack engineer.</i>
