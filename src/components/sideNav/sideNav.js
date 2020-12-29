@@ -69,7 +69,7 @@ const treeItemData = [
                 end: 0.7,
             },
             { nodeId: "5", label: "Crawler Manager", start: 0.7, end: 0.8 },
-            { nodeId: "6", label: "Spelling Bee", start: 0.8, end: 0.9 },
+            { nodeId: "6", label: "Spelling Bee Solver", start: 0.8, end: 0.9 },
         ],
     },
     { nodeId: "7", label: "Get in Touch", start: 0.9, end: 1 },

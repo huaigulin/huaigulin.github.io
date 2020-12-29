@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
-import { Grid, Typography, useMediaQuery } from "@material-ui/core";
+import { Grid, TextField, Typography, useMediaQuery } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     cellFill: {
@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
         left: "30%",
         width: "40%",
         height: "calc(100% / 3)",
+        outline: "none",
     },
     sbControls: {
         width: "90vw",
@@ -70,10 +71,21 @@ const useStyles = makeStyles((theme) => ({
 
 const HiveCell = (props) => {
     const classes = useStyles();
-    const { className, letter } = props;
+    const { className, letter, isCenter, tabIndex } = props;
+    const [focus, setFoucs] = useState(false);
 
     return (
-        <svg className={classes.hiveCell} viewBox="0 0 120 103.92304845413263">
+        <svg
+            className={classes.hiveCell}
+            viewBox="0 0 120 103.92304845413263"
+            tabIndex={tabIndex}
+            onFocus={() => {
+                setFoucs(true);
+            }}
+            onBlur={() => {
+                setFoucs(false);
+            }}
+        >
             <polygon
                 className={classes.cellFill}
                 points="0,51.96152422706631 30,0 90,0 120,51.96152422706631 90,103.92304845413263 30,103.92304845413263"
@@ -83,6 +95,24 @@ const HiveCell = (props) => {
             <text className={classes.cellLetter} x="50%" y="50%" dy="10.75%">
                 {letter}
             </text>
+            {focus && (
+                <line
+                    strokeWidth="3"
+                    x1="75"
+                    y1="25"
+                    x2="75"
+                    y2="75"
+                    stroke={isCenter ? "black" : "#f8cd05"}
+                >
+                    <animate
+                        attributeName="display"
+                        from="block"
+                        to="none"
+                        dur="1s"
+                        repeatCount="indefinite"
+                    />
+                </line>
+            )}
         </svg>
     );
 };
@@ -102,13 +132,13 @@ const Hive = (props) => {
             </Grid>
             <Grid item xs={12} className={classes.sbHive}>
                 <div className={classes.hive}>
-                    <HiveCell letter="b" />
-                    <HiveCell letter="k" />
-                    <HiveCell letter="e" />
-                    <HiveCell letter="g" />
-                    <HiveCell letter="n" />
-                    <HiveCell letter="p" />
-                    <HiveCell letter="i" />
+                    <HiveCell letter="b" isCenter tabIndex="1" />
+                    <HiveCell letter="k" tabIndex="2" />
+                    <HiveCell letter="e" tabIndex="3" />
+                    <HiveCell letter="g" tabIndex="4" />
+                    <HiveCell letter="n" tabIndex="5" />
+                    <HiveCell letter="p" tabIndex="6" />
+                    <HiveCell letter="i" tabIndex="7" />
                 </div>
             </Grid>
         </Grid>
