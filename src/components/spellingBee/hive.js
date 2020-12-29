@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
-import { Grid, TextField, Typography, useMediaQuery } from "@material-ui/core";
+import {
+    Button,
+    ClickAwayListener,
+    Grid,
+    Tooltip,
+    Typography,
+    useMediaQuery,
+} from "@material-ui/core";
+import { OpenInNew as OpenInNewIcon } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
     cellFill: {
@@ -67,13 +75,15 @@ const useStyles = makeStyles((theme) => ({
         letterSpacing: 0.5,
         color: theme.palette.common.white,
     },
+    tooltip: {
+        fontSize: 16,
+    },
 }));
 
 const HiveCell = (props) => {
     const classes = useStyles();
-    const { className, isCenter, tabIndex } = props;
+    const { className, isCenter, tabIndex, letter, setLetter } = props;
     const [focus, setFoucs] = useState(false);
-    const [letter, setLetter] = useState(null);
 
     useEffect(() => {
         if (focus) {
@@ -137,24 +147,127 @@ const HiveCell = (props) => {
 
 const Hive = (props) => {
     const classes = useStyles();
+    const [tooltipOpen, setTooltipOpen] = useState(false);
+    const [letter1, setLetter1] = useState(null);
+    const [letter2, setLetter2] = useState(null);
+    const [letter3, setLetter3] = useState(null);
+    const [letter4, setLetter4] = useState(null);
+    const [letter5, setLetter5] = useState(null);
+    const [letter6, setLetter6] = useState(null);
+    const [letter7, setLetter7] = useState(null);
+
+    const handleTooltipClose = () => {
+        setTooltipOpen(false);
+    };
+
+    const handleTooltipOpen = () => {
+        setTooltipOpen(true);
+    };
 
     return (
         <Grid
             container
+            direction="column"
             justify="center"
             alignItems="center"
             className={classes.sbControls}
+            spacing={2}
         >
             <Grid item xs={12} className={classes.sbHive}>
                 <div className={classes.hive}>
-                    <HiveCell isCenter tabIndex="1" />
-                    <HiveCell tabIndex="2" />
-                    <HiveCell tabIndex="3" />
-                    <HiveCell tabIndex="4" />
-                    <HiveCell tabIndex="5" />
-                    <HiveCell tabIndex="6" />
-                    <HiveCell tabIndex="7" />
+                    <HiveCell
+                        isCenter
+                        tabIndex="1"
+                        letter={letter1}
+                        setLetter={setLetter1}
+                    />
+                    <HiveCell
+                        tabIndex="2"
+                        letter={letter2}
+                        setLetter={setLetter2}
+                    />
+                    <HiveCell
+                        tabIndex="3"
+                        letter={letter3}
+                        setLetter={setLetter3}
+                    />
+                    <HiveCell
+                        tabIndex="4"
+                        letter={letter4}
+                        setLetter={setLetter4}
+                    />
+                    <HiveCell
+                        tabIndex="5"
+                        letter={letter5}
+                        setLetter={setLetter5}
+                    />
+                    <HiveCell
+                        tabIndex="6"
+                        letter={letter6}
+                        setLetter={setLetter6}
+                    />
+                    <HiveCell
+                        tabIndex="7"
+                        letter={letter7}
+                        setLetter={setLetter7}
+                    />
                 </div>
+            </Grid>
+            <Grid item xs={12}>
+                <ClickAwayListener onClickAway={handleTooltipClose}>
+                    <Tooltip
+                        PopperProps={{
+                            disablePortal: true,
+                        }}
+                        onClose={handleTooltipClose}
+                        open={tooltipOpen}
+                        disableFocusListener
+                        disableHoverListener
+                        disableTouchListener
+                        title="Oops! Fill out all letters first..."
+                        placement="top"
+                        classes={{ tooltip: classes.tooltip }}
+                    >
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            size="large"
+                            onClick={() => {
+                                if (
+                                    !letter1 ||
+                                    !letter2 ||
+                                    !letter3 ||
+                                    !letter4 ||
+                                    !letter5 ||
+                                    !letter6 ||
+                                    !letter7
+                                ) {
+                                    handleTooltipOpen();
+                                } else {
+                                    console.log("Trigger solving algorithm");
+                                }
+                            }}
+                        >
+                            let me solve it for you!
+                        </Button>
+                    </Tooltip>
+                </ClickAwayListener>
+            </Grid>
+            <Grid item xs={12}>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    endIcon={<OpenInNewIcon fontSize="inherit" />}
+                    onClick={() => {
+                        window.open(
+                            "https://www.nytimes.com/puzzles/spelling-bee",
+                            "_blank"
+                        );
+                    }}
+                    size="large"
+                >
+                    check new york times for today's puzzle
+                </Button>
             </Grid>
         </Grid>
     );
