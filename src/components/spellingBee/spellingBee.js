@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     },
     cardRoot: {
         width: "100%",
-        minHeight: "70vh",
+        height: "70vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
