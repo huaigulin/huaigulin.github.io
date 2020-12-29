@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
 import { Grid, TextField, Typography, useMediaQuery } from "@material-ui/core";
 
@@ -71,8 +71,26 @@ const useStyles = makeStyles((theme) => ({
 
 const HiveCell = (props) => {
     const classes = useStyles();
-    const { className, letter, isCenter, tabIndex } = props;
+    const { className, isCenter, tabIndex } = props;
     const [focus, setFoucs] = useState(false);
+    const [letter, setLetter] = useState(null);
+
+    useEffect(() => {
+        if (focus) {
+            const handleKeyDown = (e) => {
+                if (e.code.startsWith("Key")) {
+                    setLetter(e.code.slice(3));
+                } else if (e.code === "Backspace") {
+                    setLetter(null);
+                }
+            };
+            document.addEventListener("keydown", handleKeyDown);
+
+            return function cleanup() {
+                document.removeEventListener("keydown", handleKeyDown);
+            };
+        }
+    }, [focus]);
 
     return (
         <svg
@@ -98,9 +116,9 @@ const HiveCell = (props) => {
             {focus && (
                 <line
                     strokeWidth="3"
-                    x1="75"
+                    x1={letter ? "75" : "50"}
                     y1="25"
-                    x2="75"
+                    x2={letter ? "75" : "50"}
                     y2="75"
                     stroke={isCenter ? "black" : "#f8cd05"}
                 >
@@ -127,18 +145,15 @@ const Hive = (props) => {
             alignItems="center"
             className={classes.sbControls}
         >
-            <Grid item xs={12} className={classes.sbHiveInput}>
-                sb-hive-input
-            </Grid>
             <Grid item xs={12} className={classes.sbHive}>
                 <div className={classes.hive}>
-                    <HiveCell letter="b" isCenter tabIndex="1" />
-                    <HiveCell letter="k" tabIndex="2" />
-                    <HiveCell letter="e" tabIndex="3" />
-                    <HiveCell letter="g" tabIndex="4" />
-                    <HiveCell letter="n" tabIndex="5" />
-                    <HiveCell letter="p" tabIndex="6" />
-                    <HiveCell letter="i" tabIndex="7" />
+                    <HiveCell isCenter tabIndex="1" />
+                    <HiveCell tabIndex="2" />
+                    <HiveCell tabIndex="3" />
+                    <HiveCell tabIndex="4" />
+                    <HiveCell tabIndex="5" />
+                    <HiveCell tabIndex="6" />
+                    <HiveCell tabIndex="7" />
                 </div>
             </Grid>
         </Grid>
