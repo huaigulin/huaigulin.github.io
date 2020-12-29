@@ -35,6 +35,7 @@ export default () => {
     const classes = useStyles();
     const theme = useTheme();
     const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
+    const [result, setResult] = useState([]);
 
     return (
         <Grid
@@ -68,18 +69,48 @@ export default () => {
                         md={6}
                         style={{ display: "flex", justifyContent: "center" }}
                     >
-                        <Hive />
+                        <Hive setResult={setResult} />
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <Card className={classes.cardRoot} variant="outlined">
-                            <CardContent>
+                        <Card
+                            className={classes.cardRoot}
+                            variant="outlined"
+                            style={
+                                isSmScreen
+                                    ? { marginLeft: 8, marginRight: 8 }
+                                    : {}
+                            }
+                        >
+                            <CardContent style={{ height: "80%" }}>
                                 <Typography
                                     className={classes.title}
                                     color="textSecondary"
                                     gutterBottom
                                 >
-                                    I have found 0 word for you
+                                    I have found {result.length} word for you
                                 </Typography>
+                                <div
+                                    style={{
+                                        height: "100%",
+                                        overflow: "auto",
+                                    }}
+                                >
+                                    <ul
+                                        style={{
+                                            columnCount: 3,
+                                            listStyleType: "none",
+                                        }}
+                                    >
+                                        {result.length > 0 &&
+                                            result.map((word, index) => (
+                                                <li key={index}>
+                                                    <Typography variant="body1">
+                                                        {word}
+                                                    </Typography>
+                                                </li>
+                                            ))}
+                                    </ul>
+                                </div>
                             </CardContent>
                             <CardActions>
                                 <Button

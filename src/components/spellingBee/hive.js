@@ -146,6 +146,7 @@ const HiveCell = (props) => {
 };
 
 const Hive = (props) => {
+    const { setResult } = props;
     const classes = useStyles();
     const [tooltipOpen, setTooltipOpen] = useState(false);
     const [letter1, setLetter1] = useState(null);
@@ -244,7 +245,31 @@ const Hive = (props) => {
                                 ) {
                                     handleTooltipOpen();
                                 } else {
-                                    console.log("Trigger solving algorithm");
+                                    let letters =
+                                        letter1 +
+                                        letter2 +
+                                        letter3 +
+                                        letter4 +
+                                        letter5 +
+                                        letter6 +
+                                        letter7;
+                                    letters = letters.toLowerCase();
+                                    fetch(
+                                        "http://20.185.23.11:8080/findWords",
+                                        {
+                                            method: "POST",
+                                            headers: {
+                                                "Content-Type":
+                                                    "application/json",
+                                            },
+                                            body: JSON.stringify({
+                                                letters: letters,
+                                                centerLetter: letter1.toLowerCase(),
+                                            }),
+                                        }
+                                    )
+                                        .then((response) => response.json())
+                                        .then((data) => setResult(data));
                                 }
                             }}
                         >
