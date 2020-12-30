@@ -168,7 +168,7 @@ const Hive = (props) => {
     return (
         <Grid
             container
-            direction="column"
+            // direction="column"
             justify="center"
             alignItems="center"
             className={classes.sbControls}
@@ -214,7 +214,11 @@ const Hive = (props) => {
                     />
                 </div>
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+                item
+                xs={12}
+                style={{ display: "flex", justifyContent: "center" }}
+            >
                 <ClickAwayListener onClickAway={handleTooltipClose}>
                     <Tooltip
                         PopperProps={{
