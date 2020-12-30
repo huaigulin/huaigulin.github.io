@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment, useRef } from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
 import {
     Button,
@@ -27,28 +27,28 @@ const useStyles = makeStyles((theme) => ({
         position: "relative",
         width: "100%",
         paddingBottom: "103.92305%",
-        "& svg:nth-child(1)": {
+        "& div:nth-child(1)": {
             transform: "translate(0, 0)",
             "& polygon": {
                 fill: "#f8cd05",
             },
         },
-        "& svg:nth-child(2)": {
+        "& div:nth-child(2)": {
             transform: "translate(-75%, -50%)",
         },
-        "& svg:nth-child(3)": {
+        "& div:nth-child(3)": {
             transform: "translate(0, -100%)",
         },
-        "& svg:nth-child(4)": {
+        "& div:nth-child(4)": {
             transform: "translate(75%, -50%)",
         },
-        "& svg:nth-child(5)": {
+        "& div:nth-child(5)": {
             transform: "translate(75%, 50%)",
         },
-        "& svg:nth-child(6)": {
+        "& div:nth-child(6)": {
             transform: "translate(0, 100%)",
         },
-        "& svg:nth-child(7)": {
+        "& div:nth-child(7)": {
             transform: "translate(-75%, 50%)",
         },
     },
@@ -103,45 +103,64 @@ const HiveCell = (props) => {
     }, [focus]);
 
     return (
-        <svg
-            className={classes.hiveCell}
-            viewBox="0 0 120 103.92304845413263"
-            tabIndex={tabIndex}
+        <div
             onFocus={() => {
                 setFoucs(true);
             }}
             onBlur={() => {
                 setFoucs(false);
             }}
+            className={classes.hiveCell}
+            tabIndex={tabIndex}
         >
-            <polygon
-                className={classes.cellFill}
-                points="0,51.96152422706631 30,0 90,0 120,51.96152422706631 90,103.92304845413263 30,103.92304845413263"
-                stroke="#282c34"
-                stroke-width="7.5"
-            />
-            <text className={classes.cellLetter} x="50%" y="50%" dy="10.75%">
-                {letter}
-            </text>
             {focus && (
-                <line
-                    strokeWidth="3"
-                    x1={letter ? "75" : "50"}
-                    y1="25"
-                    x2={letter ? "75" : "50"}
-                    y2="75"
-                    stroke={isCenter ? "black" : "#f8cd05"}
-                >
-                    <animate
-                        attributeName="display"
-                        from="block"
-                        to="none"
-                        dur="1s"
-                        repeatCount="indefinite"
-                    />
-                </line>
+                <input
+                    type="text"
+                    autoFocus
+                    style={{
+                        position: "absolute",
+                        height: 0,
+                        padding: "unset",
+                        margin: "unset",
+                        border: "none",
+                    }}
+                />
             )}
-        </svg>
+            <svg viewBox="0 0 120 103.92304845413263">
+                <polygon
+                    className={classes.cellFill}
+                    points="0,51.96152422706631 30,0 90,0 120,51.96152422706631 90,103.92304845413263 30,103.92304845413263"
+                    stroke="#282c34"
+                    stroke-width="7.5"
+                />
+                <text
+                    className={classes.cellLetter}
+                    x="50%"
+                    y="50%"
+                    dy="10.75%"
+                >
+                    {letter}
+                </text>
+                {focus && (
+                    <line
+                        strokeWidth="3"
+                        x1={letter ? "75" : "50"}
+                        y1="25"
+                        x2={letter ? "75" : "50"}
+                        y2="75"
+                        stroke={isCenter ? "black" : "#f8cd05"}
+                    >
+                        <animate
+                            attributeName="display"
+                            from="block"
+                            to="none"
+                            dur="1s"
+                            repeatCount="indefinite"
+                        />
+                    </line>
+                )}
+            </svg>
+        </div>
     );
 };
 
