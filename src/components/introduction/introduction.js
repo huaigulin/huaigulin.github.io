@@ -44,7 +44,7 @@ export default () => {
             </h3>
             <p>
                 I write frontend, backend and mobile applications with React,
-                Node.js, Java and SQL.
+                Node.js, Java, SQL and MongoDB.
             </p>
             <p>
                 More importantly, I'm a strong problem-solver who cares about
