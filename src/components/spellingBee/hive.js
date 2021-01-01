@@ -255,7 +255,7 @@ const Hive = (props) => {
                                         letter7;
                                     letters = letters.toLowerCase();
                                     fetch(
-                                        "http://20.185.23.11:8080/findWords",
+                                        "https://personal-website-spelling-bee-backend.com/backend/findWords",
                                         {
                                             method: "POST",
                                             headers: {
