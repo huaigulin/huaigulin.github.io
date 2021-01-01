@@ -333,7 +333,7 @@ const Hive = (props) => {
                     }}
                     size="large"
                 >
-                    check today's puzzle in New York Times
+                    check today's puzzle on new york times
                 </Button>
             </Grid>
         </Grid>
