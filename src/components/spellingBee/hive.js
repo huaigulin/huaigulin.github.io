@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment, useRef } from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
 import {
+    Backdrop,
     Button,
     ClickAwayListener,
     Grid,
@@ -11,6 +12,10 @@ import {
 import { OpenInNew as OpenInNewIcon } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
+    backdrop: {
+        zIndex: theme.zIndex.drawer + 1,
+        color: theme.palette.common.black,
+    },
     cellFill: {
         cursor: "pointer",
         fill: "#e6e6e6",
@@ -175,6 +180,7 @@ const Hive = (props) => {
     const [letter5, setLetter5] = useState(null);
     const [letter6, setLetter6] = useState(null);
     const [letter7, setLetter7] = useState(null);
+    const [solving, setSolving] = useState(false);
 
     const handleTooltipClose = () => {
         setTooltipOpen(false);
@@ -193,6 +199,11 @@ const Hive = (props) => {
             className={classes.sbControls}
             spacing={2}
         >
+            <Backdrop className={classes.backdrop} open={solving}>
+                <Typography variant="h1" color="textPrimary">
+                    Solving...
+                </Typography>
+            </Backdrop>
             <Grid item xs={12} className={classes.sbHive}>
                 <div className={classes.hive}>
                     <HiveCell
@@ -268,6 +279,7 @@ const Hive = (props) => {
                                 ) {
                                     handleTooltipOpen();
                                 } else {
+                                    setSolving(true);
                                     let letters =
                                         letter1 +
                                         letter2 +
@@ -292,7 +304,10 @@ const Hive = (props) => {
                                         }
                                     )
                                         .then((response) => response.json())
-                                        .then((data) => setResult(data));
+                                        .then((data) => {
+                                            setSolving(false);
+                                            setResult(data);
+                                        });
                                 }
                             }}
                         >
@@ -301,7 +316,11 @@ const Hive = (props) => {
                     </Tooltip>
                 </ClickAwayListener>
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+                item
+                xs={12}
+                style={{ display: "flex", justifyContent: "center" }}
+            >
                 <Button
                     variant="outlined"
                     color="primary"
@@ -314,7 +333,7 @@ const Hive = (props) => {
                     }}
                     size="large"
                 >
-                    check new york times for today's puzzle
+                    check today's puzzle in New York Times
                 </Button>
             </Grid>
         </Grid>

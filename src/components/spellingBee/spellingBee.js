@@ -10,7 +10,10 @@ import {
     useMediaQuery,
 } from "@material-ui/core";
 import Hive from "./hive";
-import { OpenInNew as OpenInNewIcon } from "@material-ui/icons";
+import {
+    ArrowDownward as ArrowDownwardIcon,
+    OpenInNew as OpenInNewIcon,
+} from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
     background: {
@@ -67,8 +70,41 @@ export default () => {
                         item
                         xs={12}
                         md={6}
-                        style={{ display: "flex", justifyContent: "center" }}
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            flexDirection: "column",
+                        }}
                     >
+                        <Typography
+                            color="textPrimary"
+                            align="center"
+                            style={
+                                isSmScreen
+                                    ? { marginLeft: 8, marginRight: 8 }
+                                    : { marginLeft: 16 }
+                            }
+                        >
+                            <b>
+                                A tool to solve New York Times' Spelling Bee
+                                puzzle
+                            </b>
+                        </Typography>
+                        <br />
+                        <Typography color="textPrimary" align="center">
+                            Type of Work: <i>recreational</i>,{" "}
+                            <i>independent</i>
+                        </Typography>
+                        <br />
+                        <Typography
+                            color="textPrimary"
+                            align="center"
+                            style={{ display: "flex", alignItems: "center" }}
+                        >
+                            | <ArrowDownwardIcon fontSize="inherit" /> Enter
+                            letters in the hive below |
+                        </Typography>
                         <Hive setResult={setResult} />
                     </Grid>
                     <Grid item xs={12} md={6}>
