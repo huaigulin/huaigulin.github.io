@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const treeItemData = [
-    { nodeId: "1", label: "Introduction", start: 0, end: 0.1 },
+    { nodeId: "1", label: "Introduction", start: 0, end: 1 / 11 },
     {
         nodeId: "expandable",
         label: "Project Showcase",
@@ -53,26 +53,36 @@ const treeItemData = [
             {
                 nodeId: "2",
                 label: "Intelligent Call Center for Banks, Proof of Concept",
-                start: 0.1,
-                end: 0.2,
+                start: 1 / 11,
+                end: 2 / 11,
             },
             {
                 nodeId: "3",
                 label: "ShopNow E-commerce Platform",
-                start: 0.2,
-                end: 0.6,
+                start: 2 / 11,
+                end: 6 / 11,
             },
             {
                 nodeId: "4",
                 label: "Customer Service AI Trainer",
-                start: 0.6,
-                end: 0.7,
+                start: 6 / 11,
+                end: 7 / 11,
             },
-            { nodeId: "5", label: "Crawler Manager", start: 0.7, end: 0.8 },
-            { nodeId: "6", label: "Spelling Bee Solver", start: 0.8, end: 0.9 },
+            {
+                nodeId: "5",
+                label: "Crawler Manager",
+                start: 7 / 11,
+                end: 8 / 11,
+            },
+            {
+                nodeId: "6",
+                label: "Spelling Bee Solver",
+                start: 8 / 11,
+                end: 10 / 11,
+            },
         ],
     },
-    { nodeId: "7", label: "Get in Touch", start: 0.9, end: 1 },
+    { nodeId: "7", label: "Get in Touch", start: 10 / 11, end: 1 },
 ];
 
 export default (props) => {

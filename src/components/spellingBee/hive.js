@@ -307,6 +307,17 @@ const Hive = (props) => {
                                         .then((data) => {
                                             setSolving(false);
                                             setResult(data);
+                                            document
+                                                .getElementById("mainComponent")
+                                                .scrollTo({
+                                                    top:
+                                                        (9 / 11) *
+                                                        document.getElementById(
+                                                            "mainComponent"
+                                                        ).scrollHeight,
+                                                    left: 0,
+                                                    behavior: "smooth",
+                                                });
                                         });
                                 }
                             }}
