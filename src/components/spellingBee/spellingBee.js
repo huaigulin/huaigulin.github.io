@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import Hive from "./hive";
 import {
+    ArrowDownward as ArrowDownwardIcon,
     ArrowForward as ArrowForwardIcon,
     OpenInNew as OpenInNewIcon,
 } from "@material-ui/icons";
@@ -112,7 +113,12 @@ export default () => {
                                 }}
                             >
                                 | Enter letters in the hive{" "}
-                                <ArrowForwardIcon fontSize="inherit" /> |
+                                {isSmScreen ? (
+                                    <ArrowDownwardIcon fontSize="inherit" />
+                                ) : (
+                                    <ArrowForwardIcon fontSize="inherit" />
+                                )}{" "}
+                                |
                             </Typography>
                         </Grid>
                         <Grid
