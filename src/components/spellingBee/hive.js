@@ -122,6 +122,7 @@ const HiveCell = (props) => {
                 <input
                     type="text"
                     autoFocus
+                    tabIndex={tabIndex}
                     style={{
                         position: "absolute",
                         height: 0,
