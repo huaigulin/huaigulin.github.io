@@ -265,6 +265,7 @@ const Hive = (props) => {
                         classes={{ tooltip: classes.tooltip }}
                     >
                         <Button
+                            tabIndex="8"
                             variant="contained"
                             color="primary"
                             size="large"
