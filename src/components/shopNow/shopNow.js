@@ -227,7 +227,7 @@ export default () => {
                                         : { marginRight: 16 }
                                 }
                             >
-                                WeChat Public Account is an import eCommerce
+                                WeChat Public Account is an important eCommerce
                                 marketing channel in the Chinese market
                             </Typography>
                             <br />
