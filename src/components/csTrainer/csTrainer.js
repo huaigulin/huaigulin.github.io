@@ -64,11 +64,12 @@ export default () => {
                         >
                             <b>
                                 An Android native APP that trains customer
-                                service how to talk to customers.{" "}
+                                service agents on how to talk to customers.{" "}
                                 <i>Speech recognition</i> is used to recognize
                                 users' voice. A custom <i>NLP module</i> is used
                                 to mimic customers' questions, score customer
-                                services' answers and give out standard answers
+                                service agents' answers and give out standard
+                                answers
                             </b>
                         </Typography>
                         <br />
