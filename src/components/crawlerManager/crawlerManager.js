@@ -35,7 +35,7 @@ export default () => {
             </Grid>
             <Grid item>
                 <Grid container spacing={4} alignItems="center">
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={7}>
                         <video
                             src="https://personalwebsite2.blob.core.windows.net/container/crawler_manager.mp4"
                             type="video/mp4"
@@ -51,7 +51,7 @@ export default () => {
                             }
                         />
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={5}>
                         <Typography
                             color="textPrimary"
                             align="center"
