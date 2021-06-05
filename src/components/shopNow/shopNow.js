@@ -41,7 +41,7 @@ export default () => {
                 </Grid>
                 <Grid item>
                     <Grid container spacing={4} alignItems="center">
-                        <Grid item xs={12} md={6}>
+                        <Grid item xs={12} md={4}>
                             <Typography
                                 color="textPrimary"
                                 align="center"
@@ -70,7 +70,7 @@ export default () => {
                                 Co-developer: Chenjie Wang
                             </Typography>
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid item xs={12} md={8}>
                             <Typography
                                 variant="h6"
                                 color="textPrimary"
@@ -82,10 +82,10 @@ export default () => {
                                         : {}
                                 }
                             >
-                                Multi-layer Menu:{" "}
+                                Interactive Map:{" "}
                             </Typography>
                             <video
-                                src="https://personalwebsite2.blob.core.windows.net/container/Menu.mp4"
+                                src="https://personalwebsite2.blob.core.windows.net/container/interactive_map.mp4"
                                 type="video/mp4"
                                 autoPlay
                                 loop
@@ -288,7 +288,7 @@ export default () => {
                                 Sales and Marketing Data Visulization:{" "}
                             </Typography>
                             <video
-                                src="https://personalwebsite2.blob.core.windows.net/container/data_visulization.mp4"
+                                src="https://personalwebsite2.blob.core.windows.net/container/data_visulization_2.mp4"
                                 type="video/mp4"
                                 autoPlay
                                 loop
