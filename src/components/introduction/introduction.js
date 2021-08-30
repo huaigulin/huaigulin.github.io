@@ -43,7 +43,7 @@ export default () => {
                 <i>Not your ordinary full-stack engineer.</i>
             </h3>
             <p>
-                I write frontend, backend and mobile applications with React,
+                I create frontend, backend and mobile applications with React,
                 Node.js, Java, SQL and MongoDB.
             </p>
             <p>
