@@ -31,25 +31,21 @@ export default () => {
             <h1>Get in Touch</h1>
             <p>huaigu.lin@hotmail.com</p>
             <Grid container justify="center">
-                <Chip
-                    icon={
-                        <motion.div whileHover={{ scale: 1.2 }}>
-                            <IconButton
-                                aria-label="like"
-                                color="secondary"
-                                fontSize="large"
-                            >
-                                <FavoriteIcon />
-                            </IconButton>
-                        </motion.div>
-                    }
-                    label="Give a like"
-                    variant="outlined"
-                    classes={{
-                        icon: classes.chipIcon,
-                        outlined: classes.chipOutlined,
-                    }}
-                />
+                <Typography variant="body1">
+                    This website is built with React.js and
+                    <motion.div
+                        whileHover={{ scale: 1.2 }}
+                        style={{ display: "inline-block" }}
+                    >
+                        <IconButton
+                            aria-label="like"
+                            color="secondary"
+                            fontSize="large"
+                        >
+                            <FavoriteIcon />
+                        </IconButton>
+                    </motion.div>
+                </Typography>
             </Grid>
         </div>
     );
