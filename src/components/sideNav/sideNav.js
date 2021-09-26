@@ -7,13 +7,14 @@ import {
     KeyboardArrowUp as KeyboardArrowUpIcon,
 } from "@material-ui/icons";
 import clsx from "clsx";
+import SimpleBar from "simplebar-react";
+import "simplebar/dist/simplebar.min.css";
 
 const useStyles = makeStyles((theme) => ({
     sideBackground: {
         backgroundColor: "#121212",
-        height: "100vh",
+        minHeight: "100vh",
         color: "rgba(255, 255, 255, 0.6)",
-        overflowY: "auto",
     },
     treeItemBoldLabel: {
         fontWeight: "bold",
@@ -48,41 +49,59 @@ const treeItemData = [
     { nodeId: "1", label: "Introduction", start: 0, end: 1 / 11 },
     {
         nodeId: "expandable",
-        label: "Project Showcase",
+        label: "Coding Projects",
         nestedData: [
             {
                 nodeId: "2",
                 label: "Intelligent Call Center for Banks, Proof of Concept",
-                start: 1 / 11,
-                end: 2 / 11,
+                start: 1 / 13,
+                end: 2 / 13,
             },
             {
                 nodeId: "3",
                 label: "ShopNow E-commerce Platform",
-                start: 2 / 11,
-                end: 6 / 11,
+                start: 2 / 13,
+                end: 6 / 13,
             },
             {
                 nodeId: "4",
                 label: "Customer Service AI Trainer",
-                start: 6 / 11,
-                end: 7 / 11,
+                start: 6 / 13,
+                end: 7 / 13,
             },
             {
                 nodeId: "5",
                 label: "Crawler Manager",
-                start: 7 / 11,
-                end: 8 / 11,
+                start: 7 / 13,
+                end: 8 / 13,
             },
             {
                 nodeId: "6",
                 label: "Spelling Bee Solver",
-                start: 8 / 11,
-                end: 10 / 11,
+                start: 8 / 13,
+                end: 10 / 13,
             },
         ],
     },
-    { nodeId: "7", label: "Get in Touch", start: 10 / 11, end: 1 },
+    {
+        nodeId: "expandable2",
+        label: "Design and Technology",
+        nestedData: [
+            {
+                nodeId: "7",
+                label: "Instruction Set for Strangers",
+                start: 10 / 13,
+                end: 11 / 13,
+            },
+            {
+                nodeId: "8",
+                label: "Time, the Trilogy",
+                start: 11 / 13,
+                end: 12 / 13,
+            },
+        ],
+    },
+    { nodeId: "9", label: "Get in Touch", start: 12 / 13, end: 1 },
 ];
 
 export default (props) => {
@@ -91,99 +110,120 @@ export default (props) => {
     const [expanded, setExpanded] = useState([]);
 
     useEffect(() => {
-        if (scrollPosition > 0.5 / 10) setExpanded(["expandable"]);
+        if (scrollPosition > 0.5 / 13 && scrollPosition < 9.5 / 13)
+            setExpanded(["expandable"]);
+        if (scrollPosition >= 9.5 / 13) setExpanded(["expandable2"]);
     }, [scrollPosition]);
 
     return (
-        <Grid
-            className={classes.sideBackground}
-            container
-            direction="column"
-            justify="center"
-            alignItems="flex-start"
-        >
-            <TreeView
-                classes={{ root: classes.treeViewRoot }}
-                defaultCollapseIcon={<KeyboardArrowDownIcon />}
-                defaultExpandIcon={<KeyboardArrowUpIcon />}
-                expanded={expanded}
+        <SimpleBar style={{ height: "100vh" }}>
+            <Grid
+                className={classes.sideBackground}
+                container
+                direction="column"
+                justify="center"
+                alignItems="flex-start"
             >
-                {treeItemData.map((row) => (
-                    <TreeItem
-                        key={row.nodeId}
-                        nodeId={row.nodeId}
-                        label={row.label}
-                        classes={{
-                            root: classes.treeItemRoot,
-                            content: classes.treeItemContent,
-                            label: clsx({
-                                [classes.treeItemLabel]: true,
-                                [classes.treeItemBoldLabel]:
-                                    scrollPosition > row.start - 0.05 &&
-                                    scrollPosition <= row.end - 0.05,
-                            }),
-                            selected: classes.treeItemSelected,
-                        }}
-                        onClick={() => {
-                            if (!row.nestedData) {
-                                document
-                                    .getElementById("mainComponent")
-                                    .scrollTo({
-                                        top:
-                                            row.start *
-                                            document.getElementById(
-                                                "mainComponent"
-                                            ).scrollHeight,
-                                        left: 0,
-                                        behavior: "smooth",
+                <TreeView
+                    classes={{ root: classes.treeViewRoot }}
+                    defaultCollapseIcon={<KeyboardArrowDownIcon />}
+                    defaultExpandIcon={<KeyboardArrowUpIcon />}
+                    expanded={expanded}
+                >
+                    {treeItemData.map((row) => (
+                        <TreeItem
+                            key={row.nodeId}
+                            nodeId={row.nodeId}
+                            label={row.label}
+                            classes={{
+                                root: classes.treeItemRoot,
+                                content: classes.treeItemContent,
+                                label: clsx({
+                                    [classes.treeItemLabel]: true,
+                                    [classes.treeItemBoldLabel]:
+                                        scrollPosition > row.start - 0.05 &&
+                                        scrollPosition <= row.end - 0.05,
+                                }),
+                                selected: classes.treeItemSelected,
+                            }}
+                            onClick={() => {
+                                if (!row.nestedData) {
+                                    document
+                                        .getElementById("mainComponent")
+                                        .scrollTo({
+                                            top:
+                                                row.start *
+                                                document.getElementById(
+                                                    "mainComponent"
+                                                ).scrollHeight,
+                                            left: 0,
+                                            behavior: "smooth",
+                                        });
+                                } else {
+                                    setExpanded((expanded) => {
+                                        if (row.nodeId === "expandable") {
+                                            const index =
+                                                expanded.indexOf("expandable");
+                                            if (index > -1) {
+                                                expanded.splice(index, 1);
+                                                return [...expanded];
+                                            } else {
+                                                return ["expandable"];
+                                            }
+                                        } else if (
+                                            row.nodeId === "expandable2"
+                                        ) {
+                                            const index =
+                                                expanded.indexOf("expandable2");
+                                            if (index > -1) {
+                                                expanded.splice(index, 1);
+                                                return [...expanded];
+                                            } else {
+                                                return ["expandable2"];
+                                            }
+                                        }
                                     });
-                            } else {
-                                setExpanded((expanded) => {
-                                    if (expanded.length > 0) {
-                                        return [];
-                                    } else {
-                                        return ["expandable"];
-                                    }
-                                });
-                            }
-                        }}
-                    >
-                        {row.nestedData &&
-                            row.nestedData.map((r) => (
-                                <TreeItem
-                                    key={r.nodeId}
-                                    classes={{
-                                        root: classes.treeItemNestedRoot,
-                                        content: classes.treeItemContent,
-                                        label: clsx({
-                                            [classes.treeItemLabel]: true,
-                                            [classes.treeItemBoldLabel]:
-                                                scrollPosition >
-                                                    r.start - 0.05 &&
-                                                scrollPosition <= r.end - 0.05,
-                                        }),
-                                        selected: classes.treeItemSelected,
-                                    }}
-                                    nodeId={r.nodeId}
-                                    label={r.label}
-                                    onClick={() => {
-                                        document
-                                            .getElementById("mainComponent")
-                                            .scrollTo({
-                                                top:
-                                                    r.start *
-                                                    document.getElementById(
-                                                        "mainComponent"
-                                                    ).scrollHeight,
-                                                left: 0,
-                                                behavior: "smooth",
-                                            });
-                                    }}
-                                />
-                            ))}
-                    </TreeItem>
-                ))}
-            </TreeView>
-        </Grid>
+                                }
+                            }}
+                        >
+                            {row.nestedData &&
+                                row.nestedData.map((r) => (
+                                    <TreeItem
+                                        key={r.nodeId}
+                                        classes={{
+                                            root: classes.treeItemNestedRoot,
+                                            content: classes.treeItemContent,
+                                            label: clsx({
+                                                [classes.treeItemLabel]: true,
+                                                [classes.treeItemBoldLabel]:
+                                                    scrollPosition >
+                                                        r.start - 0.05 &&
+                                                    scrollPosition <=
+                                                        r.end - 0.05,
+                                            }),
+                                            selected: classes.treeItemSelected,
+                                        }}
+                                        nodeId={r.nodeId}
+                                        label={r.label}
+                                        onClick={() => {
+                                            document
+                                                .getElementById("mainComponent")
+                                                .scrollTo({
+                                                    top:
+                                                        r.start *
+                                                        document.getElementById(
+                                                            "mainComponent"
+                                                        ).scrollHeight,
+                                                    left: 0,
+                                                    behavior: "smooth",
+                                                });
+                                        }}
+                                    />
+                                ))}
+                        </TreeItem>
+                    ))}
+                </TreeView>
+            </Grid>
+        </SimpleBar>
     );
 };

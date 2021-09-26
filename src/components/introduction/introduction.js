@@ -44,11 +44,12 @@ export default () => {
             </h3>
             <p>
                 I create frontend, backend and mobile applications with React,
-                Node.js, Java, SQL and MongoDB.
+                Node.js, Java, SQL and MongoDB. More importantly, I'm a strong
+                problem-solver who cares about user experience and design.
             </p>
             <p>
-                More importantly, I'm a strong problem-solver who cares about
-                user experience and design.
+                Currently, I'm a student of the MFA Design and Technology
+                program at Parsons School of Design.
             </p>
             <p style={{ display: "flex", alignItems: "center" }}>
                 | <ArrowDownwardIcon fontSize="inherit" /> Scroll down to see

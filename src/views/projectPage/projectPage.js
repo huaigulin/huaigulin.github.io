@@ -9,6 +9,8 @@ import CsTrainer from "../../components/csTrainer/csTrainer";
 import CrawlerManager from "../../components/crawlerManager/crawlerManager";
 import SpellingBee from "../../components/spellingBee/spellingBee";
 import Contact from "../../components/contact/contact";
+import InstructionSet from "../../components/instructionSet/instructionSet";
+import Time from "../../components/time/time";
 
 const useStyles = makeStyles({
     mainBackground: {
@@ -61,6 +63,8 @@ export default () => {
                     <CsTrainer />
                     <CrawlerManager />
                     <SpellingBee />
+                    <InstructionSet />
+                    <Time />
                     <Contact />
                 </div>
             </Grid>
