@@ -25,9 +25,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default () => {
     const classes = useStyles();
-    const controls = useAnimation();
-    const controls2 = useAnimation();
-    const controls3 = useAnimation();
+    // const controls = useAnimation();
+    // const controls2 = useAnimation();
+    // const controls3 = useAnimation();
 
     return (
         <div className={classes.background}>
@@ -37,19 +37,50 @@ export default () => {
                 <Typography variant="body1" style={{ position: "relative" }}>
                     This website is built with React.js and
                     <motion.div
-                        animate={controls}
+                        animate={{
+                            x: 64,
+                            y: -64,
+                            opacity: 0,
+                            rotate: 30,
+                            zoom: 2,
+                            transition: {
+                                duration: 3,
+                                repeat: Infinity,
+                            },
+                            transitionEnd: { visibility: "hidden" },
+                        }}
                         style={{ position: "absolute", top: 12, right: 12 }}
                     >
                         <FavoriteIcon color="secondary" />
                     </motion.div>
                     <motion.div
-                        animate={controls2}
+                        animate={{
+                            x: -48,
+                            y: -48,
+                            opacity: 0,
+                            rotate: -45,
+                            transition: {
+                                duration: 3,
+                                repeat: Infinity,
+                            },
+                            transitionEnd: { visibility: "hidden" },
+                        }}
                         style={{ position: "absolute", top: 12, right: 12 }}
                     >
                         <FavoriteIcon color="secondary" />
                     </motion.div>
                     <motion.div
-                        animate={controls3}
+                        animate={{
+                            y: -72,
+                            opacity: 0,
+                            rotate: -5,
+                            zoom: 1.5,
+                            transition: {
+                                duration: 3,
+                                repeat: Infinity,
+                            },
+                            transitionEnd: { visibility: "hidden" },
+                        }}
                         style={{ position: "absolute", top: 12, right: 12 }}
                     >
                         <FavoriteIcon color="secondary" />
@@ -62,40 +93,6 @@ export default () => {
                             aria-label="like"
                             color="secondary"
                             fontSize="large"
-                            onClick={() => {
-                                controls.start({
-                                    x: 54,
-                                    y: -54,
-                                    opacity: 0.2,
-                                    rotate: 30,
-                                    transition: {
-                                        duration: 2,
-                                        repeat: Infinity,
-                                    },
-                                    transitionEnd: { visibility: "hidden" },
-                                });
-                                controls2.start({
-                                    x: -40,
-                                    y: -40,
-                                    opacity: 0,
-                                    rotate: -45,
-                                    transition: {
-                                        duration: 2,
-                                        repeat: Infinity,
-                                    },
-                                    transitionEnd: { visibility: "hidden" },
-                                });
-                                controls3.start({
-                                    y: -64,
-                                    opacity: 0.1,
-                                    rotate: -5,
-                                    transition: {
-                                        duration: 2,
-                                        repeat: Infinity,
-                                    },
-                                    transitionEnd: { visibility: "hidden" },
-                                });
-                            }}
                         >
                             <FavoriteIcon />
                         </IconButton>
