@@ -43,8 +43,43 @@ export default () => {
                     align="center"
                     style={isSmScreen ? { marginLeft: 8, marginRight: 8 } : {}}
                 >
-                    <b>Time, the Trilogy</b>
+                    <b>Hourglass</b>
                 </Typography>
+            </Grid>
+            <Grid item>
+                <Grid container spacing={4} alignItems="center">
+                    <Grid item xs={12} md={6}>
+                        <Typography
+                            color="textPrimary"
+                            align="center"
+                            style={
+                                isSmScreen
+                                    ? { marginLeft: 8, marginRight: 8 }
+                                    : { marginRight: 16 }
+                            }
+                        >
+                            <b>An hourglass drawing in p5.js</b>
+                        </Typography>
+                        <br />
+                        <Typography color="textPrimary" align="center">
+                            Type of Work: <i>school project</i>,{" "}
+                            <i>independent</i>
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <iframe
+                            style={
+                                isSmScreen
+                                    ? { marginLeft: 8, marginRight: 8 }
+                                    : { marginLeft: 16 }
+                            }
+                            width={400}
+                            height={400}
+                            src="https://preview.p5js.org/kevin.lin/embed/fIecHbPqB"
+                            frameBorder="0"
+                        />
+                    </Grid>
+                </Grid>
             </Grid>
         </Grid>
     );

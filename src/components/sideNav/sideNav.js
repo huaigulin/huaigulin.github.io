@@ -95,7 +95,7 @@ const treeItemData = [
             },
             {
                 nodeId: "8",
-                label: "Time, the Trilogy",
+                label: "Hourglass",
                 start: 11 / 13,
                 end: 12 / 13,
             },
