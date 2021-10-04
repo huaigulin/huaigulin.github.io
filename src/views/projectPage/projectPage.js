@@ -11,12 +11,14 @@ import SpellingBee from "../../components/spellingBee/spellingBee";
 import Contact from "../../components/contact/contact";
 import InstructionSet from "../../components/instructionSet/instructionSet";
 import Time from "../../components/time/time";
+import SimpleBar from "simplebar-react";
+import "simplebar/dist/simplebar.min.css";
 
 const useStyles = makeStyles({
     mainBackground: {
         backgroundColor: "#282c34",
-        height: "100vh",
-        overflowY: "auto",
+        // height: "100vh",
+        // overflowY: "auto",
         width: "100%",
     },
 });
@@ -56,17 +58,19 @@ export default () => {
                 </Grid>
             )}
             <Grid item xs={12} md={9}>
-                <div id="mainComponent" className={classes.mainBackground}>
-                    <Introduction />
-                    <CallCenterDemo />
-                    <ShopNow />
-                    <CsTrainer />
-                    <CrawlerManager />
-                    <SpellingBee />
-                    <InstructionSet />
-                    <Time />
-                    <Contact />
-                </div>
+                <SimpleBar style={{ height: "100vh" }}>
+                    <div id="mainComponent" className={classes.mainBackground}>
+                        <Introduction />
+                        <CallCenterDemo />
+                        <ShopNow />
+                        <CsTrainer />
+                        <CrawlerManager />
+                        <SpellingBee />
+                        <InstructionSet />
+                        <Time />
+                        <Contact />
+                    </div>
+                </SimpleBar>
             </Grid>
         </Grid>
     );
