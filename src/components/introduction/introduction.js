@@ -38,7 +38,7 @@ export default () => {
                 [classes.spacingLg]: !isSmScreen,
             })}
         >
-            <h1>Huaigu Lin</h1>
+            <h1>Kevin (Huaigu) Lin</h1>
             <h3>
                 <i>Not your ordinary full-stack engineer.</i>
             </h3>
