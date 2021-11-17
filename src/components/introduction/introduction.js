@@ -38,16 +38,62 @@ export default () => {
                 [classes.spacingLg]: !isSmScreen,
             })}
         >
-            <h1>Kevin (Huaigu) Lin</h1>
-            <h3>
-                <i>Not your ordinary full-stack engineer.</i>
+            <h1>
+                <span
+                    style={{
+                        fontFamily: "semplicitapro, sans-serif",
+                        fontWeight: 700,
+                        fontStyle: "italic",
+                    }}
+                >
+                    Kevin
+                </span>{" "}
+                <span
+                    style={{
+                        fontFamily: "recherche, sans-serif",
+                        fontWeight: 400,
+                        fontStyle: "normal",
+                    }}
+                >
+                    (Huaigu)
+                </span>{" "}
+                <span
+                    style={{
+                        fontFamily: "expo-serif-pro, serif",
+                        fontWeight: 700,
+                        fontStyle: "italic",
+                    }}
+                >
+                    Lin
+                </span>
+            </h1>
+            <h3
+                style={{
+                    fontFamily: "expo-serif-pro, serif",
+                    fontWeight: 700,
+                    fontStyle: "italic",
+                }}
+            >
+                Not your ordinary full-stack engineer.
             </h3>
-            <p>
+            <p
+                style={{
+                    fontFamily: "semplicitapro, sans-serif",
+                    fontWeight: 500,
+                    fontStyle: "normal",
+                }}
+            >
                 I create frontend, backend and mobile applications with React,
                 Node.js, Java, SQL and MongoDB. More importantly, I'm a strong
                 problem-solver who cares about user experience and design.
             </p>
-            <p>
+            <p
+                style={{
+                    fontFamily: "semplicitapro, sans-serif",
+                    fontWeight: 700,
+                    fontStyle: "italic",
+                }}
+            >
                 Currently, I'm a student of the MFA Design and Technology
                 program at Parsons School of Design.
             </p>
