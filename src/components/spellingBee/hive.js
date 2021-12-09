@@ -120,7 +120,7 @@ const HiveCell = (props) => {
         >
             {focus && (
                 <input
-                    type="text"
+                    type='text'
                     autoFocus
                     tabIndex={tabIndex}
                     style={{
@@ -132,36 +132,36 @@ const HiveCell = (props) => {
                     }}
                 />
             )}
-            <svg viewBox="0 0 120 103.92304845413263">
+            <svg viewBox='0 0 120 103.92304845413263'>
                 <polygon
                     className={classes.cellFill}
-                    points="0,51.96152422706631 30,0 90,0 120,51.96152422706631 90,103.92304845413263 30,103.92304845413263"
-                    stroke="#282c34"
-                    stroke-width="7.5"
+                    points='0,51.96152422706631 30,0 90,0 120,51.96152422706631 90,103.92304845413263 30,103.92304845413263'
+                    stroke='#282c34'
+                    stroke-width='7.5'
                 />
                 <text
                     className={classes.cellLetter}
-                    x="50%"
-                    y="50%"
-                    dy="10.75%"
+                    x='50%'
+                    y='50%'
+                    dy='10.75%'
                 >
                     {letter}
                 </text>
                 {focus && (
                     <line
-                        strokeWidth="3"
+                        strokeWidth='3'
                         x1={letter ? "75" : "50"}
-                        y1="25"
+                        y1='25'
                         x2={letter ? "75" : "50"}
-                        y2="75"
+                        y2='75'
                         stroke={isCenter ? "black" : "#f8cd05"}
                     >
                         <animate
-                            attributeName="display"
-                            from="block"
-                            to="none"
-                            dur="1s"
-                            repeatCount="indefinite"
+                            attributeName='display'
+                            from='block'
+                            to='none'
+                            dur='1s'
+                            repeatCount='indefinite'
                         />
                     </line>
                 )}
@@ -195,13 +195,13 @@ const Hive = (props) => {
         <Grid
             container
             // direction="column"
-            justify="center"
-            alignItems="center"
+            justify='center'
+            alignItems='center'
             className={classes.sbControls}
             spacing={2}
         >
             <Backdrop className={classes.backdrop} open={solving}>
-                <Typography variant="h1" color="textPrimary">
+                <Typography variant='h1' color='textPrimary'>
                     Solving...
                 </Typography>
             </Backdrop>
@@ -209,37 +209,37 @@ const Hive = (props) => {
                 <div className={classes.hive}>
                     <HiveCell
                         isCenter
-                        tabIndex="1"
+                        tabIndex='1'
                         letter={letter1}
                         setLetter={setLetter1}
                     />
                     <HiveCell
-                        tabIndex="2"
+                        tabIndex='2'
                         letter={letter2}
                         setLetter={setLetter2}
                     />
                     <HiveCell
-                        tabIndex="3"
+                        tabIndex='3'
                         letter={letter3}
                         setLetter={setLetter3}
                     />
                     <HiveCell
-                        tabIndex="4"
+                        tabIndex='4'
                         letter={letter4}
                         setLetter={setLetter4}
                     />
                     <HiveCell
-                        tabIndex="5"
+                        tabIndex='5'
                         letter={letter5}
                         setLetter={setLetter5}
                     />
                     <HiveCell
-                        tabIndex="6"
+                        tabIndex='6'
                         letter={letter6}
                         setLetter={setLetter6}
                     />
                     <HiveCell
-                        tabIndex="7"
+                        tabIndex='7'
                         letter={letter7}
                         setLetter={setLetter7}
                     />
@@ -260,15 +260,15 @@ const Hive = (props) => {
                         disableFocusListener
                         disableHoverListener
                         disableTouchListener
-                        title="Oops! Fill out all letters first..."
-                        placement="top"
+                        title='Oops! Fill out all letters first...'
+                        placement='top'
                         classes={{ tooltip: classes.tooltip }}
                     >
                         <Button
-                            tabIndex="8"
-                            variant="contained"
-                            color="primary"
-                            size="large"
+                            tabIndex='8'
+                            variant='contained'
+                            color='primary'
+                            size='large'
                             onClick={() => {
                                 if (
                                     !letter1 ||
@@ -301,7 +301,8 @@ const Hive = (props) => {
                                             },
                                             body: JSON.stringify({
                                                 letters: letters,
-                                                centerLetter: letter1.toLowerCase(),
+                                                centerLetter:
+                                                    letter1.toLowerCase(),
                                             }),
                                         }
                                     )
@@ -313,7 +314,7 @@ const Hive = (props) => {
                                                 .getElementById("mainComponent")
                                                 .scrollTo({
                                                     top:
-                                                        (9 / 11) *
+                                                        (9 / 13) *
                                                         document.getElementById(
                                                             "mainComponent"
                                                         ).scrollHeight,
@@ -335,16 +336,16 @@ const Hive = (props) => {
                 style={{ display: "flex", justifyContent: "center" }}
             >
                 <Button
-                    variant="outlined"
-                    color="primary"
-                    endIcon={<OpenInNewIcon fontSize="inherit" />}
+                    variant='outlined'
+                    color='primary'
+                    endIcon={<OpenInNewIcon fontSize='inherit' />}
                     onClick={() => {
                         window.open(
                             "https://www.nytimes.com/puzzles/spelling-bee",
                             "_blank"
                         );
                     }}
-                    size="large"
+                    size='large'
                 >
                     check today's puzzle on new york times
                 </Button>
