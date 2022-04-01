@@ -74,9 +74,9 @@ export default () => {
                     fontStyle: "italic",
                 }}
             >
-                Not your ordinary full-stack engineer.
+                Creative technologist, designer, full-stack engineer.
             </h3>
-            <p
+            {/* <p
                 style={{
                     fontFamily: "semplicitapro, sans-serif",
                     fontWeight: 500,
@@ -86,7 +86,7 @@ export default () => {
                 I create frontend, backend and mobile applications with React,
                 Node.js, Java, SQL and MongoDB. More importantly, I'm a strong
                 problem-solver who cares about user experience and design.
-            </p>
+            </p> */}
             <p
                 style={{
                     fontFamily: "semplicitapro, sans-serif",
@@ -98,8 +98,8 @@ export default () => {
                 program at Parsons School of Design.
             </p>
             <p style={{ display: "flex", alignItems: "center" }}>
-                | <ArrowDownwardIcon fontSize="inherit" /> Scroll down to see
-                sample projects |
+                <ArrowDownwardIcon fontSize='inherit' /> Scroll down to see a
+                couple of my projects.
             </p>
         </div>
     );
