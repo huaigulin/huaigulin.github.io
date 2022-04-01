@@ -13,61 +13,61 @@ import InstructionSet from "../../components/instructionSet/instructionSet";
 import Time from "../../components/time/time";
 
 const useStyles = makeStyles({
-    mainBackground: {
-        backgroundColor: "#282c34",
-        height: "100vh",
-        overflowY: "auto",
-        width: "100%",
-    },
+  mainBackground: {
+    backgroundColor: "#282c34",
+    height: "100vh",
+    overflowY: "auto",
+    width: "100%",
+  },
 });
 
 export default () => {
-    const classes = useStyles();
-    const theme = useTheme();
-    const isBigScreen = useMediaQuery(theme.breakpoints.up("md"));
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const handleScroll = () => {
-        const position =
-            document.getElementById("mainComponent").scrollTop /
-            document.getElementById("mainComponent").scrollHeight;
-        setScrollPosition(position);
+  const classes = useStyles();
+  const theme = useTheme();
+  const isBigScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position =
+      document.getElementById("mainComponent").scrollTop /
+      document.getElementById("mainComponent").scrollHeight;
+    setScrollPosition(position);
+  };
+  console.log(scrollPosition);
+
+  useEffect(() => {
+    document
+      .getElementById("mainComponent")
+      .addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      document
+        .getElementById("mainComponent")
+        .removeEventListener("scroll", handleScroll);
     };
-    console.log(scrollPosition);
+  }, []);
 
-    useEffect(() => {
-        document
-            .getElementById("mainComponent")
-            .addEventListener("scroll", handleScroll, { passive: true });
+  // console.log(scrollPosition);
 
-        return () => {
-            document
-                .getElementById("mainComponent")
-                .removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    // console.log(scrollPosition);
-
-    return (
-        <Grid container>
-            {isBigScreen && (
-                <Grid item md={3}>
-                    <SideNavigation scrollPosition={scrollPosition} />
-                </Grid>
-            )}
-            <Grid item xs={12} md={9}>
-                <div id="mainComponent" className={classes.mainBackground}>
-                    <Introduction />
-                    <CallCenterDemo />
-                    <ShopNow />
-                    <CsTrainer />
-                    <CrawlerManager />
-                    <SpellingBee />
-                    <InstructionSet />
-                    <Time />
-                    <Contact />
-                </div>
-            </Grid>
+  return (
+    <Grid container>
+      {isBigScreen && (
+        <Grid item md={3}>
+          <SideNavigation scrollPosition={scrollPosition} />
         </Grid>
-    );
+      )}
+      <Grid item xs={12} md={9}>
+        <div id='mainComponent' className={classes.mainBackground}>
+          <Introduction />
+          <InstructionSet />
+          <SpellingBee />
+          <ShopNow />
+          <CallCenterDemo />
+          <Time />
+          <CsTrainer />
+          <CrawlerManager />
+          <Contact />
+        </div>
+      </Grid>
+    </Grid>
+  );
 };
