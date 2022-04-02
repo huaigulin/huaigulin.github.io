@@ -11,6 +11,8 @@ import SpellingBee from "../../components/spellingBee/spellingBee";
 import Contact from "../../components/contact/contact";
 import InstructionSet from "../../components/instructionSet/instructionSet";
 import Time from "../../components/time/time";
+import DrawTogether from "../../components/drawTogether/drawTogether";
+import ClockFace from "../../components/time/clockFace";
 
 const useStyles = makeStyles({
   mainBackground: {
@@ -61,7 +63,9 @@ export default () => {
           <InstructionSet />
           <ShopNow />
           <SpellingBee />
+          <DrawTogether />
           <CallCenterDemo />
+          <ClockFace />
           <Time />
           <CsTrainer />
           <CrawlerManager />
