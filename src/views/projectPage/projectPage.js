@@ -20,6 +20,7 @@ const useStyles = makeStyles({
     height: "100vh",
     overflowY: "auto",
     width: "100%",
+    overflowX: "hidden",
   },
 });
 
