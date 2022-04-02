@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const treeItemData = [
-  { nodeId: "1", label: "Introduction", start: 0, end: 1 / 14 },
+  { nodeId: "1", label: "Introduction", start: 0, end: 1 / 13 },
   {
     nodeId: "expandable",
     label: "User Experience Design",
@@ -54,8 +54,8 @@ const treeItemData = [
       {
         nodeId: "2",
         label: "Instruction Set for Strangers",
-        start: 1 / 14,
-        end: 2 / 14,
+        start: 1 / 13,
+        end: 2 / 13,
       },
     ],
   },
@@ -66,8 +66,8 @@ const treeItemData = [
       {
         nodeId: "3",
         label: "ShopNow E-commerce Platform",
-        start: 2 / 14,
-        end: 4 / 14,
+        start: 2 / 13,
+        end: 4 / 13,
       },
     ],
   },
@@ -78,20 +78,20 @@ const treeItemData = [
       {
         nodeId: "4",
         label: "Spelling Bee Solver",
-        start: 4 / 14,
-        end: 6 / 14,
+        start: 4 / 13,
+        end: 6 / 13,
       },
       {
         nodeId: "5",
         label: "Let's Draw Together",
-        start: 7 / 14,
-        end: 8 / 14,
+        start: 6 / 13,
+        end: 7 / 13,
       },
       {
         nodeId: "6",
         label: "Intelligent Call Center for Banks, Proof of Concept",
-        start: 8 / 14,
-        end: 9 / 14,
+        start: 7 / 13,
+        end: 8 / 13,
       },
     ],
   },
@@ -102,14 +102,14 @@ const treeItemData = [
       {
         nodeId: "7",
         label: "Clock Face",
-        start: 9 / 14,
-        end: 10 / 14,
+        start: 8 / 13,
+        end: 9 / 13,
       },
       {
         nodeId: "8",
         label: "Hourglass",
-        start: 10 / 14,
-        end: 11 / 14,
+        start: 9 / 13,
+        end: 10 / 13,
       },
     ],
   },
@@ -120,18 +120,18 @@ const treeItemData = [
       {
         nodeId: "4",
         label: "Customer Service AI Trainer",
-        start: 11 / 14,
-        end: 12 / 14,
+        start: 10 / 13,
+        end: 11 / 13,
       },
       {
         nodeId: "5",
         label: "Crawler Manager",
-        start: 12 / 14,
-        end: 13 / 14,
+        start: 11 / 13,
+        end: 12 / 13,
       },
     ],
   },
-  { nodeId: "9", label: "Get in Touch", start: 13 / 14, end: 1 },
+  { nodeId: "9", label: "Get in Touch", start: 12 / 13, end: 1 },
 ];
 
 export default (props) => {
@@ -225,6 +225,9 @@ export default (props) => {
                     nodeId={r.nodeId}
                     label={r.label}
                     onClick={() => {
+                      console.log(
+                        document.getElementById("mainComponent").scrollHeight
+                      );
                       document.getElementById("mainComponent").scrollTo({
                         top:
                           r.start *
