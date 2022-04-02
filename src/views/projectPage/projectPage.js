@@ -59,8 +59,8 @@ export default () => {
         <div id='mainComponent' className={classes.mainBackground}>
           <Introduction />
           <InstructionSet />
-          <SpellingBee />
           <ShopNow />
+          <SpellingBee />
           <CallCenterDemo />
           <Time />
           <CsTrainer />
