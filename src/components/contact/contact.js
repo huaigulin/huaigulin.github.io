@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
-import { Chip, Grid, IconButton, Typography } from "@material-ui/core";
+import { Grid, IconButton, Typography, useMediaQuery } from "@material-ui/core";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { motion, useAnimation } from "framer-motion";
+import clsx from "clsx";
 
 const useStyles = makeStyles((theme) => ({
   background: {
@@ -21,10 +22,16 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.white,
     borderColor: theme.palette.common.white,
   },
+  marginForSm: {
+    marginLeft: 8,
+    marginRight: 8,
+  },
 }));
 
 export default () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
   // const controls = useAnimation();
   // const controls2 = useAnimation();
   // const controls3 = useAnimation();
@@ -38,6 +45,7 @@ export default () => {
           fontStyle: "italic",
           textAlign: "center",
         }}
+        className={clsx({ [classes.marginForSm]: isSmScreen })}
       >
         Wanna see more? Get in touch!
       </h1>
