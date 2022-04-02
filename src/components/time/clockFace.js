@@ -41,23 +41,6 @@ export default () => {
       </Grid>
       <Grid item>
         <Grid container spacing={4} alignItems='center'>
-          <Grid item xs={12} md={4}>
-            <Typography
-              color='textPrimary'
-              align='center'
-              style={
-                isSmScreen
-                  ? { marginLeft: 8, marginRight: 8 }
-                  : { marginRight: 16 }
-              }
-            >
-              <b>A real-time clock face made with TouchDesigner</b>
-            </Typography>
-            <br />
-            <Typography color='textPrimary' align='center'>
-              Type of Work: <i>school project</i>, <i>independent</i>
-            </Typography>
-          </Grid>
           <Grid item xs={12} md={8}>
             <video
               src='https://personalwebsite2.blob.core.windows.net/container/Screen Recording 2022-04-01 at 15.34.03.mov'
@@ -67,8 +50,30 @@ export default () => {
               width='100%'
               muted
               playsInline
-              style={isSmScreen ? { marginLeft: 8, marginRight: 8 } : {}}
+              style={
+                isSmScreen
+                  ? { marginLeft: 8, marginRight: 8 }
+                  : { marginLeft: 16 }
+              }
             />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Typography
+              color='textPrimary'
+              align='center'
+              style={isSmScreen ? { marginLeft: 8, marginRight: 8 } : {}}
+            >
+              <b>A real-time clock face made with TouchDesigner</b>
+            </Typography>
+            <br />
+            <Typography color='textPrimary' align='center'>
+              Work is in the "/perform" window on the left. Items on the right
+              are for reference purpose only
+            </Typography>
+            <br />
+            <Typography color='textPrimary' align='center'>
+              Type of Work: <i>school project</i>, <i>independent</i>
+            </Typography>
           </Grid>
         </Grid>
       </Grid>
